@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon-32x32.png">
+    <title>BSI hub</title>
+</head>
+<body>
+    <header>
+        <div class="headerContainer">
+            <div class="headerLogoArea">
+                <a href="#"><img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="bsiHubLogo"></a>
+            </div>
+            <div class="headerSearchArea">
+                <img src="assets/img/svg/search-icon.svg" alt="Search Icon" class="searchIcon"> 
+                <input type="text" id="searchInput" placeholder="Buscar no BSIHub">
+                <img src="assets/img/svg/adjust-icon.svg" alt="Filter Icon" class="filterIcon">
+            </div>
+            <div class="headerAccountArea">
+                <button>Entrar | Cadastrar-se</button>
+                <!-- <img src="assets/img/svg/gear-icon.svg" alt="Settings Icon" class="settingsIcon">
+                <p class="headerUserName">Username</p>
+                <img src="assets/img/svg/user-icon.svg" alt="User Icon" class="userIcon"> -->
+            </div>
+        </div>
+    </header>
+
+        <!-- ============================================================================================================================ -->
+        <!-- ============================================================================================================================ -->
+        <!-- ============================================================================================================================ -->
+        <!-- ============================================================================================================================ -->
+        <!-- ============================================================================================================================ -->
+
+    <main>
+        <section class="sideMenuArea">
+            <ul>
+                <li id="scheduleLink">
+                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Horário Individual</p>
+                </li>
+                <li id="calendarLink">
+                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Calendário Oficial</p>
+                </li>
+                <li id="libraryLink">
+                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Biblioteca Pública</p>
+                </li>
+                <li id="gradeLink">
+                    <img src="assets/img/svg/page-icon.svg" alt="Page Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Registro de Notas</p>
+                </li>
+                <li id="appointmentsLink">
+                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Seus Lembretes</p>
+                </li>
+                <li id="sccholarGridLink">
+                    <img src="assets/img/svg/grid-icon.svg" alt="Grid Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Matriz Curricular</p>
+                </li>
+                <li id="contactLink">
+                    <img src="assets/img/svg/telephone-icon.svg" alt="Telephone Icon" class="sideMenuIcon">
+                    <p class="sideMenuText">Contato</p>
+                </li>
+            </ul>
+        </section>
+        <section class="workArea">
+
+            <!-- <div class="nothingScreen">
+                <h1>Seja bem-vindo ao BSI hub!</h1>
+                <div>
+                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="nothingScreenIcon">
+                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="nothingScreenIcon">
+                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="nothingScreenIcon">
+                    <img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="nothingScreenLogo">
+                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="nothingScreenIcon">
+                    <img src="assets/img/svg/grid-icon.svg" alt="grid Icon" class="nothingScreenIcon">
+                    <img src="assets/img/svg/telephone-icon.svg" alt="telephone Icon" class="nothingScreenIcon">
+                </div>
+                <p>A casa dos sofredores do BSI</p>
+            </div> -->
+
+            <div class="scheduleScreen">
+                <table id="scheduleTable" class="locked">
+                    <tr>
+                        <th>Horário</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">07:30 - 09:10</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">09:30 - 11:10</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">11:20 - 13:00</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">13:00 - 14:40</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">15:00 - 16:40</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">16:50 - 18:30</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">18:30 - 20:10</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                    <tr>
+                        <td class="timeCell">20:20 - 22:00</td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                        <td><p></p></td>
+                    </tr>
+                </table>
+                <button id="lockTableButton"><img src="assets/img/svg/lock-icon.svg" alt="Locker Icon"></button>
+            </div>
+
+            <!-- <div class="homeScreen">
+                <div class="recentsArea">
+                    <h2>Recentes</h2>
+                    <div class="recentsContent">
+                        <p id="noRecentsNotice">...</p>
+                    </div>
+                </div>
+                <div class="">
+
+                </div>
+            </div> -->
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

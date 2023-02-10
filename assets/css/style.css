@@ -1,0 +1,370 @@
+:root {
+    --bg-color: #1a1f25;
+    --primary-color: #21262D;
+    --secondary-color: #2b323a;
+    --text-color: #A5A8BD;
+    --text-color-2: #434F65;
+    --button-color: #39A6FF;
+    --element-color-1: #3957ff;
+    --element-color-2: #9971f7;
+    --element-color-3: #6b1bcc;
+    --shadow-color: #07090d;
+    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%) sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%) contrast(92%);
+    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
+    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%) contrast(102%);
+    --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%) saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: var(--bg-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.mainContent{
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.headerContainer{
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    height: 60px;
+    position: static;
+}
+
+.headerLogoArea{
+    width: 250px;
+}
+
+.bsiHubLogo{
+    height: 45px;
+}
+
+.headerSearchArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 54px;
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color);
+}
+
+.searchIcon{
+    height: 40px;
+    padding: 2px 5px;
+    border-right: 2px solid black;
+    filter: var(--secondary-color-svg-filter);
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+}
+
+.searchIcon:hover{
+    filter: var(--text-color-svg-filter);
+}
+
+#searchInput{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+#searchInput:focus{
+    outline: none;
+}
+
+.filterIcon{
+    height: 35px;
+    padding: 0px 10px;
+    rotate: -90deg;
+    filter: var(--secondary-color-svg-filter);
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+}
+
+.filterIcon:hover{
+    filter: var(--text-color-svg-filter);
+}
+
+.headerAccountArea{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.headerAccountArea button{
+    background-color: transparent;
+    height: 54px;
+    padding: 0px 10px;
+    border: 2px solid var(--button-color);
+    border-radius: 15px;
+    color: var(--button-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.headerAccountArea button:hover{
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    filter: drop-shadow(0px 0px 7px var(--button-color));
+}
+
+.headerUserName{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 20px;
+    color: var(--text-color);
+    text-align: end;
+    width: 180px;
+    padding: 0px 10px;
+}
+
+.settingsIcon{
+    padding-left: 10px;
+    height: 30px;
+    filter: var(--secondary-color-svg-filter);
+    cursor: pointer;
+}
+
+.userIcon{
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    filter: var(--secondary-color-svg-filter);
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+}
+
+.sideMenuArea{
+    display: flex;
+    width: 270px;
+    margin-top: 20px;
+    padding: 30px 15px;
+    border-right: 1px solid var(--secondary-color);
+}
+
+.sideMenuArea ul li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.sideMenuIcon{
+    height: 30px;
+    filter: var(--text-color-svg-filter);
+    cursor: pointer;
+}
+
+#appointmentsLink .sideMenuIcon{
+    rotate: 45deg;
+}
+
+.sideMenuText{
+    font-size: 20px;
+    color: var(--text-color);
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.workArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px 15px;
+}
+
+/* .recentsArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.recentsArea h2{
+    color: var(--text-color);
+    font-size: 20px;
+    margin-left: 35px;
+}
+
+.recentsContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 20px 0 0 35px;
+}
+
+#noRecentsNotice{
+    vertical-align: middle;
+    font-size: 100px;
+    font-weight: 900;
+    height: 150px;
+    line-height: 90px;
+    color: var(--secondary-color);
+} */
+
+.nothingScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.nothingScreen h1{
+    color: var(--text-color);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.nothingScreen p{
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.nothingScreen div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nothingScreenIcon{
+    height: 40px;
+    filter: var(--text-color-svg-filter);
+    margin: 0 5px;
+}
+
+.nothingScreenLogo{
+    height: 120px;
+    margin: 0 30px;
+}
+
+.scheduleScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.scheduleScreen table{
+    color: var(--text-color);
+    width: 1000px;
+    vertical-align: center;
+    text-align: center;
+    border-collapse: collapse;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+}
+
+.scheduleScreen th, td{
+    border-collapse: collapse;
+    border: 2px solid var(--secondary-color);
+}
+
+.scheduleScreen tr, td{
+    width: 100px;
+    height: 75px;
+    max-width: 100px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.scheduleScreen table tr:nth-child(1){
+    height: 40px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.scheduleScreen table p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.scheduleScreen table td input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.scheduleScreen table td input:focus{
+    outline: solid 2px var(--text-color);
+}
+
+#lockTableButton{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--button-color);
+    border-radius: 15px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+#lockTableButton img{
+    height: 50px;
+    filter: var(--button-color-svg-filter);
+    transition: 300ms all ease-in-out;
+}
+
+#lockTableButton:hover{
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    filter: drop-shadow(0px 0px 7px var(--button-color));
+}
+
+#lockTableButton:hover img{
+    filter: var(--bg-color-svg-filter);
+}
