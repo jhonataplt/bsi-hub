@@ -9,12 +9,12 @@
     --element-color-2: #9971f7;
     --element-color-3: #6b1bcc;
     --shadow-color: #0e1117;
-    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%) sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%) contrast(92%);
-    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
-    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%) contrast(102%);
     --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%) saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
     --primary-color-svg-filter: brightness(0) saturate(100%) invert(11%) sepia(9%) saturate(1327%) hue-rotate(175deg) brightness(90%) contrast(89%);
+    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%) sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%) contrast(92%);
+    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
     --text-color-2-svg-filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(1990%) hue-rotate(181deg) brightness(96%) contrast(95%);
+    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%) contrast(102%);
 }
 
 * {
@@ -95,7 +95,6 @@ a{
     border-right: 2px solid black;
     filter: var(--secondary-color-svg-filter);
     cursor: pointer;
-    transition: 100ms all ease-in-out;
 }
 
 .searchIcon:hover{
@@ -646,6 +645,7 @@ main{
     background-color: var(--primary-color);
     border-radius: 30px;
     border: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
 .contactContainer h2{
@@ -715,4 +715,39 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#themeArea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#themeSwitch{
+    display: flex;
+    align-items: center;
+    background-color: var(--button-color);
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+    border: 1px solid var(--button-color);
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+}
+
+#themeButton{
+    border: none;
+    background-color: var(--primary-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: linear 0.2s;
+}
+
+#themeButton img{
+    width: 100%;
+    height: 100%;
+    filter: var(--contacts-svg-filter);
+    transition: linear 0.3s;
 }
