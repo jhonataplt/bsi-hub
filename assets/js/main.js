@@ -1,16 +1,29 @@
 function globalFunction() {
 
+    //#======================================================================================#//
+    //#================================|| GLOBAL VARIABLES ||================================#//
+    //#======================================================================================#//
+
+
+
     const root = document.querySelector(':root');
-    const themeSwitch = document.querySelector('#themeSwitch');
-    const themeButton = document.querySelector('#themeButton');
-    const themeButtonIcon = document.querySelector('#themeButton img');
+
     const headerBsiLogo = document.querySelector('.bsiHubLogo');
-    const nothingScreenLogo = document.querySelector('.nothingScreenLogo');
+    const welcomeScreenLogo = document.querySelector('.welcomeScreenLogo');
     const headerAccountArea = document.querySelector('.headerAccountArea');
+
+    const openLoginButton = document.querySelector('#openLoginButton');
+    const closeLoginButton = document.querySelector('#closeLoginButton');
+    const loginArea = document.querySelector('#loginArea');
+    const loginForm = document.querySelector('.loginForm');
 
     const sideMenu = document.querySelector('.sideMenuArea');
 
-    const nothingScreen = document.querySelector('.nothingScreen');
+    const themeSwitch = document.querySelector('#themeSwitch');
+    const themeButton = document.querySelector('#themeButton');
+    const themeButtonIcon = document.querySelector('#themeButton img');
+
+    const welcomeScreen = document.querySelector('.welcomeScreen');
 
     const scheduleScreen = document.querySelector('.scheduleScreen');
     const scheduleLink = document.querySelector('#scheduleLink');
@@ -37,10 +50,41 @@ function globalFunction() {
     const contactScreen = document.querySelector('.contactScreen');
     const contactLink = document.querySelector('#contactLink');
 
-    const allScreens = [nothingScreen, scheduleScreen, calendarScreen, libraryScreen, gradeScreen, remindersScreen, scholarGridScreen, contactScreen];
+    const allScreens = [welcomeScreen, scheduleScreen, calendarScreen, libraryScreen, gradeScreen, remindersScreen, scholarGridScreen, contactScreen];
     const allLinks = [scheduleLink, calendarLink, libraryLink, gradeLink, remindersLink, scholarGridLink, contactLink];
 
-    function changeSelectedLink(element){
+
+
+    //#======================================================================================#//
+    //#======================================|| LOGIN ||=====================================#//
+    //#======================================================================================#//
+
+
+
+    loginArea.addEventListener('click', function (e) {
+        const clickedElement = e.target;
+        if (clickedElement !== loginForm) {
+            loginArea.style.display = 'none';
+        }
+    });
+
+    openLoginButton.addEventListener('click', function () {
+        loginArea.style.display = 'block';
+    });
+
+    closeLoginButton.addEventListener('click', function () {
+        loginArea.style.display = 'none';
+    });
+
+
+
+    //#======================================================================================#//
+    //#==============================|| SIDEMENU NAVIGATION ||===============================#//
+    //#======================================================================================#//
+
+
+
+    function changeSelectedLink(element) {
         allLinks.forEach(element => {
             if (element.classList.contains('selectedLink')) {
                 element.classList.remove('selectedLink');
@@ -49,81 +93,59 @@ function globalFunction() {
         element.classList.add('selectedLink');
     }
 
+
     function changeScreenTo(screen) {
         allScreens.forEach(element => {
-            if (!element.classList.contains('hidden')){
+            if (!element.classList.contains('hidden')) {
                 element.classList.add('hidden');
             }
         });
         screen.classList.remove('hidden');
     }
 
-    sideMenu.addEventListener('click', function(e) {
-        if (e.target.parentElement === scheduleLink) {
+
+    sideMenu.addEventListener('click', function (e) {
+
+        const clickedElement = e.target;
+        const clickedElementParent = clickedElement.parentElement;
+
+        if (clickedElement === scheduleLink || clickedElementParent === scheduleLink) {
             changeSelectedLink(scheduleLink);
             changeScreenTo(scheduleScreen);
         }
-        else if (e.target.parentElement === calendarLink) {
+        else if (clickedElement === calendarLink || clickedElementParent === calendarLink) {
             changeSelectedLink(calendarLink);
             changeScreenTo(calendarScreen);
         }
-        else if (e.target.parentElement === libraryLink) {
+        else if (clickedElement === libraryLink || clickedElementParent === libraryLink) {
             changeSelectedLink(libraryLink);
             changeScreenTo(libraryScreen);
         }
-        else if (e.target.parentElement === gradeLink) {
+        else if (clickedElement === gradeLink || clickedElementParent === gradeLink) {
             changeSelectedLink(gradeLink);
             changeScreenTo(gradeScreen);
         }
-        else if (e.target.parentElement === remindersLink) {
+        else if (clickedElement === remindersLink || clickedElementParent === remindersLink) {
             changeSelectedLink(remindersLink);
             changeScreenTo(remindersScreen);
         }
-        else if (e.target.parentElement === scholarGridLink) {
+        else if (clickedElement === scholarGridLink || clickedElementParent === scholarGridLink) {
             changeSelectedLink(scholarGridLink);
             changeScreenTo(scholarGridScreen);
         }
-        else if (e.target.parentElement === contactLink) {
+        else if (clickedElement === contactLink || clickedElementParent === contactLink) {
             changeSelectedLink(contactLink);
             changeScreenTo(contactScreen);
         }
     });
 
-    function switchTableLock(state) {
-        if (state === 'locked') {
-            scheduleTable.classList.remove('locked');
-            scheduleTable.classList.add('unlocked');
-            scheduleTableCells.forEach(element => {
-            if (!element.classList.contains('timeCell')) {
-                element.style.setProperty('border', '2px solid var(--text-color)');
-                const previousText = element.firstChild.innerText;
-                element.innerHTML = `<input type="text" value="${previousText}">`;
-            }
-            });
-        }
-        else if (state === 'unlocked'){
-            scheduleTable.classList.remove('unlocked');
-            scheduleTable.classList.add('locked');
-            scheduleTableCells.forEach(element => {
-            if (!element.classList.contains('timeCell')) {
-                element.style.setProperty('border', '2px solid var(--secondary-color)');
-                const previousText = element.firstChild.value;
-                element.innerHTML = `<p>${previousText}</p>`;
-            }
-        });
-        }
-    };
 
-    lockTableButton.addEventListener('click', function() {
-        if (scheduleTable.classList.contains('locked')) {
-            switchTableLock(scheduleTable.getAttribute('class'));
-            lockTableButtonImage.setAttribute('src', 'assets/img/svg/unlock-icon.svg');
-        }
-        else if (scheduleTable.classList.contains('unlocked')) {
-            switchTableLock(scheduleTable.getAttribute('class'));
-            lockTableButtonImage.setAttribute('src', 'assets/img/svg/lock-icon.svg');
-        }
-    });
+
+    //#======================================================================================#//
+    //#==================================|| THEME SWITCH ||==================================#//
+    //#======================================================================================#//
+
+
 
     themeSwitch.addEventListener('click', function () {
         if (themeButton.classList.contains('darkTheme')) {
@@ -150,7 +172,7 @@ function globalFunction() {
             themeButton.style = "-webkit-transform: translateX(30px);";
             themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-sun-icon.svg');
             headerBsiLogo.setAttribute('src', 'assets/img/bsi-hub-logo-2.png');
-            nothingScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo-2.png');
+            welcomeScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo-2.png');
         } else if (themeButton.classList.contains('lightTheme')) {
             themeButton.classList.remove('lightTheme');
             themeButton.classList.add('darkTheme');
@@ -175,8 +197,52 @@ function globalFunction() {
             themeButton.style = "-webkit-transform: translateX(0px);";
             themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-moon-icon.svg');
             headerBsiLogo.setAttribute('src', 'assets/img/bsi-hub-logo.png');
-            nothingScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo.png');
+            welcomeScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo.png');
         }
     })
 
-}globalFunction();
+
+    //#======================================================================================#//
+    //#=================================|| SCHEDULE SCREEN||=================================#//
+    //#======================================================================================#//
+
+
+
+    function switchTableLock(state) {
+        if (state === 'locked') {
+            scheduleTable.classList.remove('locked');
+            scheduleTable.classList.add('unlocked');
+            scheduleTableCells.forEach(element => {
+                if (!element.classList.contains('timeCell')) {
+                    element.style.setProperty('border', '2px solid var(--text-color)');
+                    const previousText = element.firstChild.innerText;
+                    element.innerHTML = `<input type="text" value="${previousText}">`;
+                }
+            });
+        }
+        else if (state === 'unlocked') {
+            scheduleTable.classList.remove('unlocked');
+            scheduleTable.classList.add('locked');
+            scheduleTableCells.forEach(element => {
+                if (!element.classList.contains('timeCell')) {
+                    element.style.setProperty('border', '2px solid var(--secondary-color)');
+                    const previousText = element.firstChild.value;
+                    element.innerHTML = `<p>${previousText}</p>`;
+                }
+            });
+        }
+    };
+
+    lockTableButton.addEventListener('click', function () {
+        if (scheduleTable.classList.contains('locked')) {
+            switchTableLock(scheduleTable.getAttribute('class'));
+            lockTableButtonImage.setAttribute('src', 'assets/img/svg/unlock-icon.svg');
+        }
+        else if (scheduleTable.classList.contains('unlocked')) {
+            switchTableLock(scheduleTable.getAttribute('class'));
+            lockTableButtonImage.setAttribute('src', 'assets/img/svg/lock-icon.svg');
+        }
+    });
+
+
+} globalFunction();

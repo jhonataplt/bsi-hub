@@ -9,6 +9,61 @@
     <title>BSI hub</title>
 </head>
 <body>
+
+
+    <div id="loginArea">
+        <form class="loginForm animate">
+            <div class="avatarContainer">
+                <img src="assets/img/svg/user-icon.svg" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="loginFormContainer">
+                <input type="text" placeholder="E-mail" name="usernameField" id="usernameInput" required>
+
+                <input type="password" placeholder="Senha" name="passwordField" id="passwordInput" required>
+
+                <button type="submit" id="submitLoginButton">Login</button>
+                <label  id="rememberText">
+                    <input type="checkbox" checked="checked" name="remember"> Mantenha-me conectado
+                </label>
+                <a href="#" id="registerLink"><span>Registre-se</span></a>
+            </div>
+
+            <div class="loginOthersContainer">
+                <a href="#" id="forgotPassword"><span>Esqueceu sua senha?</span></a>
+                <button id="closeLoginButton">Voltar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- <div id="registerArea">
+        <form class="registerForm animate">
+            <div class="avatarContainer">
+                <img src="assets/img/svg/user-icon.svg" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="registerFormContainer">
+                <input type="text" placeholder="Nome" name="nameField" id="nameInput" required>
+
+                <input type="text" placeholder="E-mail" name="usernameField" id="usernameInput" required>
+
+                <input type="password" placeholder="Senha" name="passwordField" id="passwordInput" required>
+
+                <input type="password" placeholder="Confirme sua senha" name="passwordField" id="passwordInput" required>
+
+                <button type="submit" id="submitRegisterButton">Registrar</button>
+                <label  id="rememberText">
+                    <input type="checkbox" checked="checked" name="remember"> Mantenha-me conectado
+                </label>
+                <a href="#" id="loginLink"><span>Já possui uma conta? Faça login</span></a>
+            </div>
+
+            <div class="registerOthersContainer">
+                <button id="closeRegisterButton">Voltar</button>
+            </div>
+        </form>
+    </div> -->
+
     <header>
         <div class="headerContainer">
             <div class="headerLogoArea">
@@ -20,10 +75,7 @@
                 <img src="assets/img/svg/adjust-icon.svg" alt="Filter Icon" class="filterIcon">
             </div>
             <div class="headerAccountArea">
-                <button>Entrar | Cadastrar-se</button>
-                <!-- <img src="assets/img/svg/gear-icon.svg" alt="Settings Icon" class="settingsIcon">
-                <p class="headerUserName">Username</p>
-                <img src="assets/img/svg/user-icon.svg" alt="User Icon" class="userIcon"> -->
+                <button id="openLoginButton">Entrar | Cadastrar-se</button>
             </div>
         </div>
     </header>
@@ -74,16 +126,16 @@
         </section>
         <section class="workArea">
 
-            <div class="nothingScreen">
+            <div class="welcomeScreen">
                 <h1>Seja bem-vindo ao BSI hub!</h1>
                 <div>
-                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="nothingScreenIcon">
-                    <img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="nothingScreenLogo">
-                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/grid-icon.svg" alt="grid Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/telephone-icon.svg" alt="telephone Icon" class="nothingScreenIcon">
+                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="welcomeScreenIcon">
+                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="welcomeScreenIcon">
+                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="welcomeScreenIcon">
+                    <img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="welcomeScreenLogo">
+                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="welcomeScreenIcon">
+                    <img src="assets/img/svg/grid-icon.svg" alt="grid Icon" class="welcomeScreenIcon">
+                    <img src="assets/img/svg/telephone-icon.svg" alt="telephone Icon" class="welcomeScreenIcon">
                 </div>
                 <p>A casa dos sofredores do BSI</p>
             </div>
