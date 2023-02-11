@@ -422,25 +422,24 @@ td {
 
 .libraryScreen {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
-.libraryGrid {
-    display: grid;
-    grid:
-        "libraryContainer libraryContent" 0.5fr
-        / 1fr 1fr;
-    justify-items: center;
+.library {
+    padding-top: 50px;
+    height: 100%;
+    display: flex;
+    border-right: var(--secondary-color) 1px solid;
+    justify-content: center;
 }
 
 .libraryContainer {
-    grid-area: libraryContainer;
     display: flex;
     flex-direction: column;
-    margin: 0 20px;
+    margin: 0 90px 0 60px;
     align-items: center;
     justify-content: center;
     height: 500px;
@@ -506,32 +505,10 @@ td {
 }
 
 .libraryContent {
-    grid-area: libraryContent;
-}
-
-.semesterContent {
-    grid-area: semesterContent;
-    width: 90%;
+    width: 70%;
     display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-.libraryContent p {
-    font-size: 25px;
-    color: var(--text-color);
-    width: 100%;
-    font-weight: bold;
-}
-
-.pdfBooks {
-    width: 250px;
-    height: 250px;
-}
-
-.vermelho {
-    background-color: rgba(255, 0, 0, 0.24);
+    /* background-color: rgb(255, 0, 0); */
+    height: 100%;
 }
 
 /* #================================================================================================================= */
