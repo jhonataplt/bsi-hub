@@ -1,6 +1,5 @@
 function globalFunction() {
 
-<<<<<<< HEAD
     //#======================================================================================#//
     //#================================|| GLOBAL VARIABLES ||================================#//
     //#======================================================================================#//
@@ -18,8 +17,6 @@ function globalFunction() {
     const loginArea = document.querySelector('#loginArea');
     const loginForm = document.querySelector('.loginForm');
 
-=======
->>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     const sideMenu = document.querySelector('.sideMenuArea');
 
     const themeSwitch = document.querySelector('#themeSwitch');
@@ -143,7 +140,6 @@ function globalFunction() {
     });
 
 
-<<<<<<< HEAD
 
     //#======================================================================================#//
     //#==================================|| THEME SWITCH ||==================================#//
@@ -238,9 +234,6 @@ function globalFunction() {
     };
 
     lockTableButton.addEventListener('click', function () {
-=======
-    lockTableButton.addEventListener('click', function() {
->>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
         if (scheduleTable.classList.contains('locked')) {
             switchTableLock(scheduleTable.getAttribute('class'));
             lockTableButtonImage.setAttribute('src', 'assets/img/svg/unlock-icon.svg');
@@ -250,10 +243,6 @@ function globalFunction() {
             lockTableButtonImage.setAttribute('src', 'assets/img/svg/lock-icon.svg');
         }
     });
-<<<<<<< HEAD
 
 
 } globalFunction();
-=======
-}globalFunction();
->>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
