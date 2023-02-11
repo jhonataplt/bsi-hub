@@ -1,20 +1,30 @@
 :root {
     --bg-color: #1a1f25;
-    --primary-color: #21262D;
+    --primary-color: #21262d;
     --secondary-color: #2b323a;
-    --text-color: #A5A8BD;
-    --text-color-2: #434F65;
-    --button-color: #39A6FF;
+    --text-color: #a5a8bd;
+    --text-color-2: #434f65;
+    --button-color: #39a6ff;
     --element-color-1: #3957ff;
     --element-color-2: #9971f7;
     --element-color-3: #6b1bcc;
     --shadow-color: #0e1117;
-    --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%) saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
-    --primary-color-svg-filter: brightness(0) saturate(100%) invert(11%) sepia(9%) saturate(1327%) hue-rotate(175deg) brightness(90%) contrast(89%);
-    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%) sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%) contrast(92%);
-    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
-    --text-color-2-svg-filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(1990%) hue-rotate(181deg) brightness(96%) contrast(95%);
-    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%) contrast(102%);
+    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%)
+        sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%)
+        contrast(92%);
+    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%)
+        saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
+    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%)
+        sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%)
+        contrast(102%);
+    --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%)
+        saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
+    --primary-color-svg-filter: brightness(0) saturate(100%) invert(11%)
+        sepia(9%) saturate(1327%) hue-rotate(175deg) brightness(90%)
+        contrast(89%);
+    --text-color-2-svg-filter: brightness(0) saturate(100%) invert(30%)
+        sepia(6%) saturate(1990%) hue-rotate(181deg) brightness(96%)
+        contrast(95%);
 }
 
 * {
@@ -22,41 +32,47 @@
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: var(--bg-color);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     width: 100vw;
     height: 100vh;
 }
 
-body .hidden{
+body .hidden {
     display: none;
 }
 
+<<<<<<< HEAD
 .mainContent{
+=======
+body .selectedLink {
+    background-color: var(--secondary-color);
+    transition: 300ms all ease-in-out;
+}
+
+.mainContent {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     width: 1440px;
     height: 100%;
     margin: 0 auto;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.headerContainer{
+.headerContainer {
     display: flex;
     align-items: center;
     padding: 8px 30px;
@@ -64,15 +80,15 @@ a{
     position: static;
 }
 
-.headerLogoArea{
+.headerLogoArea {
     width: 250px;
 }
 
-.bsiHubLogo{
+.bsiHubLogo {
     height: 45px;
 }
 
-.headerSearchArea{
+.headerSearchArea {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,19 +100,20 @@ a{
     border: 2px solid var(--secondary-color);
 }
 
-.searchIcon{
+.searchIcon {
     height: 40px;
     padding: 2px 5px;
     border-right: 2px solid black;
     filter: var(--secondary-color-svg-filter);
     cursor: pointer;
+    transition: 100ms all ease-in-out;
 }
 
-.searchIcon:hover{
+.searchIcon:hover {
     filter: var(--text-color-svg-filter);
 }
 
-#searchInput{
+#searchInput {
     width: 100%;
     height: 100%;
     border: none;
@@ -106,11 +123,11 @@ a{
     padding: 0px 10px;
 }
 
-#searchInput:focus{
+#searchInput:focus {
     outline: none;
 }
 
-.filterIcon{
+.filterIcon {
     height: 35px;
     padding: 0px 10px;
     rotate: -90deg;
@@ -119,17 +136,18 @@ a{
     transition: 100ms all ease-in-out;
 }
 
-.filterIcon:hover{
+.filterIcon:hover {
     filter: var(--text-color-svg-filter);
 }
 
-.headerAccountArea{
+.headerAccountArea {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
 }
 
+<<<<<<< HEAD
 
 
 /* #================================================================================================================= */
@@ -144,6 +162,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+=======
+.headerAccountArea button {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     background-color: transparent;
     padding: 0px 20px;
     border: 2px solid var(--button-color);
@@ -155,12 +176,17 @@ a{
     transition: 300ms;
 }
 
+<<<<<<< HEAD
 #openLoginButton:hover{
+=======
+.headerAccountArea button:hover {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     background-color: var(--button-color);
     color: var(--bg-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
+<<<<<<< HEAD
 #loginArea {
     display: none;
     position: fixed;
@@ -179,6 +205,9 @@ a{
     border: 2px solid var(--secondary-color);
     width: 400px;
     height: 600px;
+=======
+.headerUserName {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -186,7 +215,20 @@ a{
     box-shadow: 0px 0px 10px var(--secondary-color);
 }
 
+<<<<<<< HEAD
 .avatarContainer {
+=======
+.settingsIcon {
+    padding-left: 10px;
+    height: 30px;
+    filter: var(--secondary-color-svg-filter);
+    cursor: pointer;
+}
+
+.userIcon {
+    height: 50px;
+    border: 2px solid black;
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     border-radius: 50%;
     border: 2px solid var(--secondary-color);
     object-fit: cover;
@@ -338,23 +380,20 @@ a{
     }
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-main{
+main {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     height: 100%;
 }
 
+<<<<<<< HEAD
 
 
 /* #================================================================================================================= */
@@ -366,6 +405,9 @@ main{
 
 
 .sideMenuArea{
+=======
+.sideMenuArea {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     display: flex;
     width: 300px;
     margin-top: 20px;
@@ -373,7 +415,7 @@ main{
     border-right: 1px solid var(--secondary-color);
 }
 
-.sideMenuArea ul li{
+.sideMenuArea ul li {
     display: flex;
     align-items: center;
     list-style: none;
@@ -391,35 +433,30 @@ body main .sideMenuArea ul .selectedLink{
     background-color: var(--secondary-color);
 }
 
-.sideMenuIcon{
+.sideMenuIcon {
     height: 30px;
     filter: var(--text-color-svg-filter);
     cursor: pointer;
 }
 
-#remindersLink .sideMenuIcon{
+#remindersLink .sideMenuIcon {
     rotate: 45deg;
 }
 
-.sideMenuText{
+.sideMenuText {
     font-size: 20px;
     color: var(--text-color);
     padding-left: 10px;
     cursor: pointer;
 }
 
-
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.workArea{
+.workArea {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -427,17 +464,19 @@ body main .sideMenuArea ul .selectedLink{
     padding: 30px;
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
+<<<<<<< HEAD
 
 
 .welcomeScreen{
+=======
+.nothingScreen {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -446,46 +485,62 @@ body main .sideMenuArea ul .selectedLink{
     padding-top: 100px;
 }
 
+<<<<<<< HEAD
 .welcomeScreen h1{
+=======
+.nothingScreen h1 {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     color: var(--text-color);
     font-size: 30px;
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .welcomeScreen p{
+=======
+.nothingScreen p {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     color: var(--secondary-color);
     font-size: 20px;
     margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .welcomeScreen div{
+=======
+.nothingScreen div {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+<<<<<<< HEAD
 .welcomeScreenIcon{
+=======
+.nothingScreenIcon {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     height: 40px;
     filter: var(--text-color-svg-filter);
     margin: 0 5px;
 }
 
+<<<<<<< HEAD
 .welcomeScreenLogo{
+=======
+.nothingScreenLogo {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     height: 120px;
     margin: 0 30px;
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.scheduleScreen{
+.scheduleScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -493,7 +548,7 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-.scheduleScreen table{
+.scheduleScreen table {
     color: var(--text-color);
     width: 1000px;
     vertical-align: center;
@@ -503,12 +558,14 @@ body main .sideMenuArea ul .selectedLink{
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
-.scheduleScreen th, td{
+.scheduleScreen th,
+td {
     border-collapse: collapse;
     border: 2px solid var(--secondary-color);
 }
 
-.scheduleScreen tr, td{
+.scheduleScreen tr,
+td {
     width: 100px;
     height: 75px;
     max-width: 100px;
@@ -516,13 +573,13 @@ body main .sideMenuArea ul .selectedLink{
     overflow: hidden;
 }
 
-.scheduleScreen table tr:nth-child(1){
+.scheduleScreen table tr:nth-child(1) {
     height: 40px;
     font-size: 20px;
     font-weight: 900;
 }
 
-.scheduleScreen table p{
+.scheduleScreen table p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -532,7 +589,7 @@ body main .sideMenuArea ul .selectedLink{
     font-size: 16px;
 }
 
-.scheduleScreen table td input{
+.scheduleScreen table td input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,11 +602,11 @@ body main .sideMenuArea ul .selectedLink{
     font-size: 16px;
 }
 
-.scheduleScreen table td input:focus{
+.scheduleScreen table td input:focus {
     outline: solid 2px var(--text-color);
 }
 
-#lockTableButton{
+#lockTableButton {
     display: flex;
     margin-top: 20px;
     justify-content: center;
@@ -560,33 +617,29 @@ body main .sideMenuArea ul .selectedLink{
     padding: 5px;
 }
 
-#lockTableButton img{
+#lockTableButton img {
     height: 50px;
     filter: var(--button-color-svg-filter);
     transition: 300ms all ease-in-out;
 }
 
-#lockTableButton:hover{
+#lockTableButton:hover {
     background-color: var(--button-color);
     color: var(--bg-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
-#lockTableButton:hover img{
+#lockTableButton:hover img {
     filter: var(--bg-color-svg-filter);
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.calendarScreen{
+.calendarScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -594,22 +647,24 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-#calendarPdf{
+#calendarPdf {
     border: none;
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
+<<<<<<< HEAD
 
 
 .gradeScreen{
+=======
+.libraryScreen {
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -617,7 +672,127 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-.gradeContainer{
+.libraryGrid {
+    display: grid;
+    grid:
+        "libraryContainer libraryContent" 0.5fr
+        / 1fr 1fr;
+    justify-items: center;
+}
+
+.libraryContainer {
+    grid-area: libraryContainer;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 300px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 2px solid var(--secondary-color);
+}
+
+.libraryContainer p {
+    margin: 20px 0;
+}
+
+.mainText {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.secondaryText {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.librarySearch {
+    background-color: var(--bg-color);
+    border: var(--primary-color);
+    height: 30px;
+    border-radius: 30px;
+}
+
+.librarySearch input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color-2);
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+.semesterSelection {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.semesterSelection button {
+    background-color: transparent;
+    padding: 0px 10px;
+    border: 1px solid var(--button-color);
+    border-radius: 15px;
+    color: var(--button-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.semesterSelection button:hover {
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    filter: drop-shadow(0px 0px 3px var(--button-color));
+}
+
+.libraryContent {
+    grid-area: libraryContent;
+}
+
+.semesterContent {
+    grid-area: semesterContent;
+    width: 90%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.libraryContent p {
+    font-size: 25px;
+    color: var(--text-color);
+    width: 100%;
+    font-weight: bold;
+}
+
+.pdfBooks {
+    width: 250px;
+    height: 250px;
+}
+
+.vermelho {
+    background-color: rgba(255, 0, 0, 0.24);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.gradeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.gradeContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -630,7 +805,7 @@ body main .sideMenuArea ul .selectedLink{
     padding: 30px 15px;
 }
 
-.addSubjectArea{
+.addSubjectArea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -639,7 +814,7 @@ body main .sideMenuArea ul .selectedLink{
     margin-top: auto;
 }
 
-#addSubjectButton{
+#addSubjectButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -650,7 +825,7 @@ body main .sideMenuArea ul .selectedLink{
     transition: 300ms all ease-in-out;
 }
 
-#addSubjectButton img{
+#addSubjectButton img {
     display: flex;
     padding-left: 5px;
     height: 40px;
@@ -660,38 +835,34 @@ body main .sideMenuArea ul .selectedLink{
     transition: 300ms all ease-in-out;
 }
 
-#addSubjectButton p{
+#addSubjectButton p {
     transition: 300ms all ease-in-out;
     color: var(--button-color);
     font-size: 20px;
     margin: 0 10px;
 }
 
-#addSubjectButton:hover{
+#addSubjectButton:hover {
     background-color: var(--button-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
-#addSubjectButton:hover img{
+#addSubjectButton:hover img {
     filter: var(--primary-color-svg-filter);
     border: none;
 }
 
-#addSubjectButton:hover p{
+#addSubjectButton:hover p {
     color: var(--bg-color);
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.remindersScreen{
+.remindersScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -699,7 +870,7 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-.remindersContainer{
+.remindersContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -712,7 +883,7 @@ body main .sideMenuArea ul .selectedLink{
     padding: 30px 15px;
 }
 
-.addReminderArea{
+.addReminderArea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -721,7 +892,7 @@ body main .sideMenuArea ul .selectedLink{
     margin-top: auto;
 }
 
-#addReminderButton{
+#addReminderButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -732,7 +903,7 @@ body main .sideMenuArea ul .selectedLink{
     transition: 300ms all ease-in-out;
 }
 
-#addReminderButton img{
+#addReminderButton img {
     display: flex;
     padding-left: 5px;
     height: 40px;
@@ -742,38 +913,34 @@ body main .sideMenuArea ul .selectedLink{
     transition: 300ms all ease-in-out;
 }
 
-#addReminderButton p{
+#addReminderButton p {
     transition: 300ms all ease-in-out;
     color: var(--button-color);
     font-size: 20px;
     margin: 0 10px;
 }
 
-#addReminderButton:hover{
+#addReminderButton:hover {
     background-color: var(--button-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
-#addReminderButton:hover img{
+#addReminderButton:hover img {
     filter: var(--primary-color-svg-filter);
     border: none;
 }
 
-#addReminderButton:hover p{
+#addReminderButton:hover p {
     color: var(--bg-color);
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.scholarGridScreen{
+.scholarGridScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -781,22 +948,18 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-#scholarGridPdf{
+#scholarGridPdf {
     border: none;
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
-
-
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 /* #================================================================================================================= */
 
-
-
-.contactScreen{
+.contactScreen {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -804,13 +967,13 @@ body main .sideMenuArea ul .selectedLink{
     justify-content: center;
 }
 
-.horizontalLine{
+.horizontalLine {
     height: 2px;
     width: 100%;
     background-color: var(--secondary-color);
 }
 
-.contactContainer{
+.contactContainer {
     display: flex;
     flex-direction: column;
     margin: 0 20px;
@@ -821,34 +984,32 @@ body main .sideMenuArea ul .selectedLink{
     background-color: var(--primary-color);
     border-radius: 30px;
     border: 2px solid var(--secondary-color);
-    box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
-.contactContainer h2{
+.contactContainer h2 {
     font-size: 22px;
     margin-bottom: 10px;
     color: var(--text-color);
     margin-bottom: 15px;
 }
 
-.contactContainer img{
+.contactContainer img {
     width: 250px;
 }
 
-.contactForms{
+.contactForms {
     display: flex;
     flex-direction: column;
 }
 
-
-.contactForms p{
+.contactForms p {
     font-size: 16px;
     text-align: center;
     margin-top: 2px;
     color: var(--text-color-2);
 }
 
-.contactForms a{
+.contactForms a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -862,23 +1023,23 @@ body main .sideMenuArea ul .selectedLink{
     transition: linear 0.2s;
 }
 
-.contactForms a:hover img{
+.contactForms a:hover img {
     filter: var(--bg-color-svg-filter);
 }
 
-.contactForms a:hover{
+.contactForms a:hover {
     background-color: var(--text-color-2);
     color: var(--bg-color);
 }
 
-.contactForms a img{
+.contactForms a img {
     height: 30px;
     width: 30px;
     margin-right: 10px;
     filter: var(--text-color-2-svg-filter);
 }
 
-#contactGrid{
+#contactGrid {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -886,12 +1047,13 @@ body main .sideMenuArea ul .selectedLink{
     gap: 10px;
 }
 
-#contactGrid a{
+#contactGrid a {
     width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
 
 
 
@@ -937,3 +1099,5 @@ body main .sideMenuArea ul .selectedLink{
     filter: var(--text-color-svg-filter);
     transition: linear 0.3s;
 }
+=======
+>>>>>>> f5233b581adefa49171cbb0b970902f6bc6a9928
