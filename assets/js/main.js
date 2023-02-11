@@ -143,7 +143,7 @@ function globalFunction() {
             root.style.setProperty('--primary-color-svg-filter', 'brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(1648%) hue-rotate(178deg) brightness(98%) contrast(92%)');
             root.style.setProperty('--secondary-color-svg-filter', 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(32deg) brightness(116%) contrast(106%)');
             root.style.setProperty('--text-color-svg-filter', 'brightness(0) saturate(100%) invert(23%) sepia(28%) saturate(402%) hue-rotate(183deg) brightness(90%) contrast(93%)');
-            root.style.setProperty('--text-color-2-svg-filter', 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(145deg) brightness(102%) contrast(102%)');
+            root.style.setProperty('--text-color-2-svg-filter', 'brightness(0) saturate(100%) invert(27%) sepia(20%) saturate(868%) hue-rotate(177deg) brightness(91%) contrast(90%)');
             root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(777%) hue-rotate(186deg) brightness(93%) contrast(84%)');
             headerAccountArea.style.setProperty('border', 'none');
             themeButton.style = "transform: translateX(30px);";
