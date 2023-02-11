@@ -1,18 +1,30 @@
 :root {
     --bg-color: #1a1f25;
-    --primary-color: #21262D;
+    --primary-color: #21262d;
     --secondary-color: #2b323a;
-    --text-color: #A5A8BD;
-    --text-color-2: #434F65;
-    --button-color: #39A6FF;
+    --text-color: #a5a8bd;
+    --text-color-2: #434f65;
+    --button-color: #39a6ff;
     --element-color-1: #3957ff;
     --element-color-2: #9971f7;
     --element-color-3: #6b1bcc;
-    --shadow-color: #07090d;
-    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%) sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%) contrast(92%);
-    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%) saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
-    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%) sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%) contrast(102%);
-    --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%) saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
+    --shadow-color: #0e1117;
+    --secondary-color-svg-filter: brightness(0) saturate(100%) invert(17%)
+        sepia(10%) saturate(900%) hue-rotate(172deg) brightness(99%)
+        contrast(92%);
+    --text-color-svg-filter: brightness(0) saturate(100%) invert(72%) sepia(3%)
+        saturate(1557%) hue-rotate(195deg) brightness(94%) contrast(91%);
+    --button-color-svg-filter: brightness(0) saturate(100%) invert(49%)
+        sepia(93%) saturate(1065%) hue-rotate(184deg) brightness(101%)
+        contrast(102%);
+    --bg-color-svg-filter: brightness(0) saturate(100%) invert(8%) sepia(21%)
+        saturate(726%) hue-rotate(173deg) brightness(91%) contrast(90%);
+    --primary-color-svg-filter: brightness(0) saturate(100%) invert(11%)
+        sepia(9%) saturate(1327%) hue-rotate(175deg) brightness(90%)
+        contrast(89%);
+    --text-color-2-svg-filter: brightness(0) saturate(100%) invert(30%)
+        sepia(6%) saturate(1990%) hue-rotate(181deg) brightness(96%)
+        contrast(95%);
 }
 
 * {
@@ -20,27 +32,43 @@
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: var(--bg-color);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
     width: 100vw;
     height: 100vh;
 }
 
-.mainContent{
+body .hidden {
+    display: none;
+}
+
+body .selectedLink {
+    background-color: var(--secondary-color);
+    transition: 300ms all ease-in-out;
+}
+
+.mainContent {
     width: 1440px;
     height: 100%;
     margin: 0 auto;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.headerContainer{
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.headerContainer {
     display: flex;
     align-items: center;
     padding: 8px 30px;
@@ -48,15 +76,15 @@ a{
     position: static;
 }
 
-.headerLogoArea{
+.headerLogoArea {
     width: 250px;
 }
 
-.bsiHubLogo{
+.bsiHubLogo {
     height: 45px;
 }
 
-.headerSearchArea{
+.headerSearchArea {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,7 +96,7 @@ a{
     border: 2px solid var(--secondary-color);
 }
 
-.searchIcon{
+.searchIcon {
     height: 40px;
     padding: 2px 5px;
     border-right: 2px solid black;
@@ -77,11 +105,11 @@ a{
     transition: 100ms all ease-in-out;
 }
 
-.searchIcon:hover{
+.searchIcon:hover {
     filter: var(--text-color-svg-filter);
 }
 
-#searchInput{
+#searchInput {
     width: 100%;
     height: 100%;
     border: none;
@@ -91,11 +119,11 @@ a{
     padding: 0px 10px;
 }
 
-#searchInput:focus{
+#searchInput:focus {
     outline: none;
 }
 
-.filterIcon{
+.filterIcon {
     height: 35px;
     padding: 0px 10px;
     rotate: -90deg;
@@ -104,11 +132,11 @@ a{
     transition: 100ms all ease-in-out;
 }
 
-.filterIcon:hover{
+.filterIcon:hover {
     filter: var(--text-color-svg-filter);
 }
 
-.headerAccountArea{
+.headerAccountArea {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -118,7 +146,7 @@ a{
     border: 2px solid var(--secondary-color);
 }
 
-.headerAccountArea button{
+.headerAccountArea button {
     background-color: transparent;
     height: 54px;
     padding: 0px 10px;
@@ -130,13 +158,13 @@ a{
     transition: 300ms;
 }
 
-.headerAccountArea button:hover{
+.headerAccountArea button:hover {
     background-color: var(--button-color);
     color: var(--bg-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
-.headerUserName{
+.headerUserName {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -147,14 +175,14 @@ a{
     padding: 0px 10px;
 }
 
-.settingsIcon{
+.settingsIcon {
     padding-left: 10px;
     height: 30px;
     filter: var(--secondary-color-svg-filter);
     cursor: pointer;
 }
 
-.userIcon{
+.userIcon {
     height: 50px;
     border: 2px solid black;
     border-radius: 50%;
@@ -162,85 +190,75 @@ a{
     cursor: pointer;
 }
 
-main{
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+main {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     height: 100%;
 }
 
-.sideMenuArea{
+.sideMenuArea {
     display: flex;
-    width: 270px;
+    width: 300px;
     margin-top: 20px;
-    padding: 30px 15px;
+    padding: 30px 0;
     border-right: 1px solid var(--secondary-color);
 }
 
-.sideMenuArea ul li{
+.sideMenuArea ul li {
     display: flex;
     align-items: center;
     list-style: none;
-    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px 0px 8px 15px;
+    border-radius: 0 20px 20px 0;
+    transition: 300ms all ease-in-out;
 }
 
-.sideMenuIcon{
+.sideMenuIcon {
     height: 30px;
     filter: var(--text-color-svg-filter);
     cursor: pointer;
 }
 
-#appointmentsLink .sideMenuIcon{
+#remindersLink .sideMenuIcon {
     rotate: 45deg;
 }
 
-.sideMenuText{
+.sideMenuText {
     font-size: 20px;
     color: var(--text-color);
     padding-left: 10px;
     cursor: pointer;
 }
 
-.workArea{
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.workArea {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
-    padding: 30px 15px;
+    padding: 30px;
 }
 
-/* .recentsArea{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 250px;
-    border-bottom: 2px solid var(--primary-color);
-}
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
 
-.recentsArea h2{
-    color: var(--text-color);
-    font-size: 20px;
-    margin-left: 35px;
-}
-
-.recentsContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 20px 0 0 35px;
-}
-
-#noRecentsNotice{
-    vertical-align: middle;
-    font-size: 100px;
-    font-weight: 900;
-    height: 150px;
-    line-height: 90px;
-    color: var(--secondary-color);
-} */
-
-.nothingScreen{
+.nothingScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -249,36 +267,42 @@ main{
     padding-top: 100px;
 }
 
-.nothingScreen h1{
+.nothingScreen h1 {
     color: var(--text-color);
     font-size: 30px;
     margin-bottom: 15px;
 }
 
-.nothingScreen p{
+.nothingScreen p {
     color: var(--secondary-color);
     font-size: 20px;
     margin-top: 15px;
 }
 
-.nothingScreen div{
+.nothingScreen div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nothingScreenIcon{
+.nothingScreenIcon {
     height: 40px;
     filter: var(--text-color-svg-filter);
     margin: 0 5px;
 }
 
-.nothingScreenLogo{
+.nothingScreenLogo {
     height: 120px;
     margin: 0 30px;
 }
 
-.scheduleScreen{
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.scheduleScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,7 +310,7 @@ main{
     height: 100%;
 }
 
-.scheduleScreen table{
+.scheduleScreen table {
     color: var(--text-color);
     width: 1000px;
     vertical-align: center;
@@ -296,12 +320,14 @@ main{
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
-.scheduleScreen th, td{
+.scheduleScreen th,
+td {
     border-collapse: collapse;
     border: 2px solid var(--secondary-color);
 }
 
-.scheduleScreen tr, td{
+.scheduleScreen tr,
+td {
     width: 100px;
     height: 75px;
     max-width: 100px;
@@ -309,13 +335,13 @@ main{
     overflow: hidden;
 }
 
-.scheduleScreen table tr:nth-child(1){
+.scheduleScreen table tr:nth-child(1) {
     height: 40px;
     font-size: 20px;
     font-weight: 900;
 }
 
-.scheduleScreen table p{
+.scheduleScreen table p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -325,7 +351,7 @@ main{
     font-size: 16px;
 }
 
-.scheduleScreen table td input{
+.scheduleScreen table td input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -338,11 +364,11 @@ main{
     font-size: 16px;
 }
 
-.scheduleScreen table td input:focus{
+.scheduleScreen table td input:focus {
     outline: solid 2px var(--text-color);
 }
 
-#lockTableButton{
+#lockTableButton {
     display: flex;
     margin-top: 20px;
     justify-content: center;
@@ -353,18 +379,433 @@ main{
     padding: 5px;
 }
 
-#lockTableButton img{
+#lockTableButton img {
     height: 50px;
     filter: var(--button-color-svg-filter);
     transition: 300ms all ease-in-out;
 }
 
-#lockTableButton:hover{
+#lockTableButton:hover {
     background-color: var(--button-color);
     color: var(--bg-color);
     filter: drop-shadow(0px 0px 7px var(--button-color));
 }
 
-#lockTableButton:hover img{
+#lockTableButton:hover img {
     filter: var(--bg-color-svg-filter);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.calendarScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#calendarPdf {
+    border: none;
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.libraryScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.libraryGrid {
+    display: grid;
+    grid:
+        "libraryContainer libraryContent" 0.5fr
+        / 1fr 1fr;
+    justify-items: center;
+}
+
+.libraryContainer {
+    grid-area: libraryContainer;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 300px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 2px solid var(--secondary-color);
+}
+
+.libraryContainer p {
+    margin: 20px 0;
+}
+
+.mainText {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.secondaryText {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.librarySearch {
+    background-color: var(--bg-color);
+    border: var(--primary-color);
+    height: 30px;
+    border-radius: 30px;
+}
+
+.librarySearch input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color-2);
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+.semesterSelection {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.semesterSelection button {
+    background-color: transparent;
+    padding: 0px 10px;
+    border: 1px solid var(--button-color);
+    border-radius: 15px;
+    color: var(--button-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.semesterSelection button:hover {
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    filter: drop-shadow(0px 0px 3px var(--button-color));
+}
+
+.libraryContent {
+    grid-area: libraryContent;
+}
+
+.semesterContent {
+    grid-area: semesterContent;
+    width: 90%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.libraryContent p {
+    font-size: 25px;
+    color: var(--text-color);
+    width: 100%;
+    font-weight: bold;
+}
+
+.pdfBooks {
+    width: 250px;
+    height: 250px;
+}
+
+.vermelho {
+    background-color: rgba(255, 0, 0, 0.24);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.gradeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.gradeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    min-height: 400px;
+    border-radius: 20px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+    background-color: var(--primary-color);
+    padding: 30px 15px;
+}
+
+.addSubjectArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: auto;
+}
+
+#addSubjectButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 22px;
+    border: 2px solid var(--button-color);
+    transition: 300ms all ease-in-out;
+}
+
+#addSubjectButton img {
+    display: flex;
+    padding-left: 5px;
+    height: 40px;
+    filter: var(--button-color-svg-filter);
+    border-radius: 50%;
+    margin-left: -2px;
+    transition: 300ms all ease-in-out;
+}
+
+#addSubjectButton p {
+    transition: 300ms all ease-in-out;
+    color: var(--button-color);
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+#addSubjectButton:hover {
+    background-color: var(--button-color);
+    filter: drop-shadow(0px 0px 7px var(--button-color));
+}
+
+#addSubjectButton:hover img {
+    filter: var(--primary-color-svg-filter);
+    border: none;
+}
+
+#addSubjectButton:hover p {
+    color: var(--bg-color);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.remindersScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.remindersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    min-height: 400px;
+    border-radius: 20px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+    background-color: var(--primary-color);
+    padding: 30px 15px;
+}
+
+.addReminderArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: auto;
+}
+
+#addReminderButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 22px;
+    border: 2px solid var(--button-color);
+    transition: 300ms all ease-in-out;
+}
+
+#addReminderButton img {
+    display: flex;
+    padding-left: 5px;
+    height: 40px;
+    filter: var(--button-color-svg-filter);
+    border-radius: 50%;
+    margin-left: -2px;
+    transition: 300ms all ease-in-out;
+}
+
+#addReminderButton p {
+    transition: 300ms all ease-in-out;
+    color: var(--button-color);
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+#addReminderButton:hover {
+    background-color: var(--button-color);
+    filter: drop-shadow(0px 0px 7px var(--button-color));
+}
+
+#addReminderButton:hover img {
+    filter: var(--primary-color-svg-filter);
+    border: none;
+}
+
+#addReminderButton:hover p {
+    color: var(--bg-color);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.scholarGridScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#scholarGridPdf {
+    border: none;
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+}
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+.contactScreen {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.horizontalLine {
+    height: 2px;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 300px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 2px solid var(--secondary-color);
+}
+
+.contactContainer h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.contactContainer img {
+    width: 250px;
+}
+
+.contactForms {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactForms p {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 2px;
+    color: var(--text-color-2);
+}
+
+.contactForms a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color-2);
+    font-size: 20px;
+    font-weight: 300;
+    height: 40px;
+    border: 2px solid var(--text-color-2);
+    border-radius: 15px;
+    transition: linear 0.2s;
+}
+
+.contactForms a:hover img {
+    filter: var(--bg-color-svg-filter);
+}
+
+.contactForms a:hover {
+    background-color: var(--text-color-2);
+    color: var(--bg-color);
+}
+
+.contactForms a img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    filter: var(--text-color-2-svg-filter);
+}
+
+#contactGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#contactGrid a {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

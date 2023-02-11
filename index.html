@@ -1,180 +1,611 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/img/favicon-32x32.png">
-    <title>BSI hub</title>
-</head>
-<body>
-    <header>
-        <div class="headerContainer">
-            <div class="headerLogoArea">
-                <a href="#"><img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="bsiHubLogo"></a>
-            </div>
-            <div class="headerSearchArea">
-                <img src="assets/img/svg/search-icon.svg" alt="Search Icon" class="searchIcon"> 
-                <input type="text" id="searchInput" placeholder="Buscar no BSIHub">
-                <img src="assets/img/svg/adjust-icon.svg" alt="Filter Icon" class="filterIcon">
-            </div>
-            <div class="headerAccountArea">
-                <button>Entrar | Cadastrar-se</button>
-                <!-- <img src="assets/img/svg/gear-icon.svg" alt="Settings Icon" class="settingsIcon">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="icon" href="assets/img/favicon-32x32.png" />
+        <title>BSI hub</title>
+    </head>
+    <body>
+        <header>
+            <div class="headerContainer">
+                <div class="headerLogoArea">
+                    <a href="index.html"
+                        ><img
+                            src="assets/img/bsi-hub-logo.png"
+                            alt="BSI Hub Logo"
+                            class="bsiHubLogo"
+                    /></a>
+                </div>
+                <div class="headerSearchArea">
+                    <img
+                        src="assets/img/svg/search-icon.svg"
+                        alt="Search Icon"
+                        class="searchIcon"
+                    />
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar no BSIHub"
+                    />
+                    <img
+                        src="assets/img/svg/adjust-icon.svg"
+                        alt="Filter Icon"
+                        class="filterIcon"
+                    />
+                </div>
+                <div class="headerAccountArea">
+                    <button>Entrar | Cadastrar-se</button>
+                    <!-- <img src="assets/img/svg/gear-icon.svg" alt="Settings Icon" class="settingsIcon">
                 <p class="headerUserName">Username</p>
                 <img src="assets/img/svg/user-icon.svg" alt="User Icon" class="userIcon"> -->
-            </div>
-        </div>
-    </header>
-
-        <!-- ============================================================================================================================ -->
-        <!-- ============================================================================================================================ -->
-        <!-- ============================================================================================================================ -->
-        <!-- ============================================================================================================================ -->
-        <!-- ============================================================================================================================ -->
-
-    <main>
-        <section class="sideMenuArea">
-            <ul>
-                <li id="scheduleLink">
-                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Horário Individual</p>
-                </li>
-                <li id="calendarLink">
-                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Calendário Oficial</p>
-                </li>
-                <li id="libraryLink">
-                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Biblioteca Pública</p>
-                </li>
-                <li id="gradeLink">
-                    <img src="assets/img/svg/page-icon.svg" alt="Page Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Registro de Notas</p>
-                </li>
-                <li id="appointmentsLink">
-                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Seus Lembretes</p>
-                </li>
-                <li id="sccholarGridLink">
-                    <img src="assets/img/svg/grid-icon.svg" alt="Grid Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Matriz Curricular</p>
-                </li>
-                <li id="contactLink">
-                    <img src="assets/img/svg/telephone-icon.svg" alt="Telephone Icon" class="sideMenuIcon">
-                    <p class="sideMenuText">Contato</p>
-                </li>
-            </ul>
-        </section>
-        <section class="workArea">
-
-            <!-- <div class="nothingScreen">
-                <h1>Seja bem-vindo ao BSI hub!</h1>
-                <div>
-                    <img src="assets/img/svg/clock-icon.svg" alt="Clock Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/calendar-icon.svg" alt="Calendar Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/book-icon.svg" alt="Book Icon" class="nothingScreenIcon">
-                    <img src="assets/img/bsi-hub-logo.png" alt="BSI Hub Logo" class="nothingScreenLogo">
-                    <img src="assets/img/svg/pin-icon.svg" alt="Pin Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/grid-icon.svg" alt="grid Icon" class="nothingScreenIcon">
-                    <img src="assets/img/svg/telephone-icon.svg" alt="telephone Icon" class="nothingScreenIcon">
                 </div>
-                <p>A casa dos sofredores do BSI</p>
-            </div> -->
-
-            <div class="scheduleScreen">
-                <table id="scheduleTable" class="locked">
-                    <tr>
-                        <th>Horário</th>
-                        <th>Segunda</th>
-                        <th>Terça</th>
-                        <th>Quarta</th>
-                        <th>Quinta</th>
-                        <th>Sexta</th>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">07:30 - 09:10</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">09:30 - 11:10</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">11:20 - 13:00</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">13:00 - 14:40</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">15:00 - 16:40</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">16:50 - 18:30</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">18:30 - 20:10</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td class="timeCell">20:20 - 22:00</td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                        <td><p></p></td>
-                    </tr>
-                </table>
-                <button id="lockTableButton"><img src="assets/img/svg/lock-icon.svg" alt="Locker Icon"></button>
             </div>
+        </header>
 
-            <!-- <div class="homeScreen">
-                <div class="recentsArea">
-                    <h2>Recentes</h2>
-                    <div class="recentsContent">
-                        <p id="noRecentsNotice">...</p>
+        <!--
+        ============================================================================================================================ 
+        ============================================================================================================================ 
+        ============================================================================================================================
+        ============================================================================================================================
+        ============================================================================================================================
+    -->
+
+        <main>
+            <section class="sideMenuArea">
+                <ul>
+                    <li id="scheduleLink">
+                        <img
+                            src="assets/img/svg/clock-icon.svg"
+                            alt="Clock Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Horário Individual</p>
+                    </li>
+                    <li id="calendarLink">
+                        <img
+                            src="assets/img/svg/calendar-icon.svg"
+                            alt="Calendar Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Calendário Oficial</p>
+                    </li>
+                    <li id="libraryLink">
+                        <img
+                            src="assets/img/svg/book-icon.svg"
+                            alt="Book Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Biblioteca Pública</p>
+                    </li>
+                    <li id="gradeLink">
+                        <img
+                            src="assets/img/svg/page-icon.svg"
+                            alt="Page Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Registro de Notas</p>
+                    </li>
+                    <li id="remindersLink">
+                        <img
+                            src="assets/img/svg/pin-icon.svg"
+                            alt="Pin Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Seus Lembretes</p>
+                    </li>
+                    <li id="scholarGridLink">
+                        <img
+                            src="assets/img/svg/grid-icon.svg"
+                            alt="Grid Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Matriz Curricular</p>
+                    </li>
+                    <li id="contactLink">
+                        <img
+                            src="assets/img/svg/telephone-icon.svg"
+                            alt="Telephone Icon"
+                            class="sideMenuIcon"
+                        />
+                        <p class="sideMenuText">Contato</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="workArea">
+                <div class="nothingScreen">
+                    <h1>Seja bem-vindo ao BSI hub!</h1>
+                    <div>
+                        <img
+                            src="assets/img/svg/clock-icon.svg"
+                            alt="Clock Icon"
+                            class="nothingScreenIcon"
+                        />
+                        <img
+                            src="assets/img/svg/calendar-icon.svg"
+                            alt="Calendar Icon"
+                            class="nothingScreenIcon"
+                        />
+                        <img
+                            src="assets/img/svg/book-icon.svg"
+                            alt="Book Icon"
+                            class="nothingScreenIcon"
+                        />
+                        <img
+                            src="assets/img/bsi-hub-logo.png"
+                            alt="BSI Hub Logo"
+                            class="nothingScreenLogo"
+                        />
+                        <img
+                            src="assets/img/svg/pin-icon.svg"
+                            alt="Pin Icon"
+                            class="nothingScreenIcon"
+                        />
+                        <img
+                            src="assets/img/svg/grid-icon.svg"
+                            alt="grid Icon"
+                            class="nothingScreenIcon"
+                        />
+                        <img
+                            src="assets/img/svg/telephone-icon.svg"
+                            alt="telephone Icon"
+                            class="nothingScreenIcon"
+                        />
+                    </div>
+                    <p>A casa dos sofredores do BSI</p>
+                </div>
+
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="scheduleScreen hidden">
+                    <table id="scheduleTable" class="locked">
+                        <tr>
+                            <th>Horário</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">07:30 - 09:10</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">09:30 - 11:10</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">11:20 - 13:00</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">13:00 - 14:40</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">15:00 - 16:40</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">16:50 - 18:30</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">18:30 - 20:10</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                        <tr>
+                            <td class="timeCell">20:20 - 22:00</td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                            <td><p></p></td>
+                        </tr>
+                    </table>
+                    <button id="lockTableButton">
+                        <img
+                            src="assets/img/svg/lock-icon.svg"
+                            alt="Locker Icon"
+                        />
+                    </button>
+                </div>
+
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="calendarScreen hidden">
+                    <iframe
+                        src="assets/pdfs/calendario-oficial.pdf"
+                        width="100%"
+                        height="100%"
+                        id="calendarPdf"
+                    ></iframe>
+                </div>
+
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="gradeScreen hidden">
+                    <div class="gradeContainer">
+                        <div class="addSubjectArea">
+                            <button id="addSubjectButton">
+                                <img
+                                    src="assets/img/svg/plus-icon.svg"
+                                    alt="Plus Icon"
+                                />
+                                <p>Adicionar Disciplina</p>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="">
 
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="libraryScreen hidden">
+                    <div class="libraryGrid">
+
+                        <div class="libraryContainer">
+                            <p class="mainText">Pesquise o PDF</p>
+                            <div class="librarySearch"><input type="text" placeholder="Buscar"></div>
+                            <p class="secondaryText">ou</p>
+                            <p class="mainText">Escolha o período</p>
+                            <div class="semesterSelection">
+                                <button>1º<br>Período</button>
+                                <button>2º<br>Período</button>
+                                <button>3º<br>Período</button>
+                                <button>4º<br>Período</button>
+                                <button>5º<br>Período</button>
+                                <button>6º<br>Período</button>
+                                <button>7º<br>Período</button>
+                                <button>8º<br>Período</button>
+                            </div>
+                        </div>
+
+
+                        <div class="libraryContent">
+                            <div>
+                                <p>Primeiro Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Segundo Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Terceiro Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Quarto Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Quinto Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Sexto Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Sétimo Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                            <div>
+                                <p>Oitavo Período</p>
+                                <br />
+                            </div>
+                            <div class="semesterContent">
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                                <div class="vermelho pdfBooks"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> -->
-        </section>
-    </main>
 
-    <script src="assets/js/main.js"></script>
-</body>
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="remindersScreen hidden">
+                    <div class="remindersContainer">
+                        <div class="addReminderArea">
+                            <button id="addReminderButton">
+                                <img
+                                    src="assets/img/svg/plus-icon.svg"
+                                    alt="Plus Icon"
+                                />
+                                <p>Adicionar Lembrete</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="scholarGridScreen hidden">
+                    <iframe
+                        src="assets/pdfs/matriz-curricular&optativas.pdf#view=FitV"
+                        width="100%"
+                        height="100%"
+                        id="scholarGridPdf"
+                    ></iframe>
+                </div>
+
+                <!---
+            ============================================================================================================================ 
+            ============================================================================================================================ 
+            ============================================================================================================================
+            ============================================================================================================================
+            ============================================================================================================================
+        -->
+
+                <div class="contactScreen hidden">
+                    <div class="contactContainer">
+                        <img src="assets/img/jhonata-avatar.png" alt="Avatar" />
+                        <div class="horizontalLine"></div>
+                        <h2>Jhonata Polito</h2>
+                        <div class="contactForms">
+                            <div id="contactGrid">
+                                <a
+                                    href="https://jhonataplt.github.io/sort-comparison/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/globe-icon.svg"
+                                    />Website</a
+                                >
+                                <a
+                                    href="https://www.linkedin.com/in/jhonatapolito/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/linkedin-icon.svg"
+                                    />Linkedin</a
+                                >
+                                <a
+                                    href="https://github.com/jhonataplt"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/github-icon.svg"
+                                    />Github</a
+                                >
+                                <a
+                                    href="mailto:jhonata.demuner@gmail.com"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/email-icon.svg"
+                                    />E-mail</a
+                                >
+                            </div>
+                            <p>jhonata.demuner@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contactContainer">
+                        <img
+                            src="assets/img/spinasse-avatar.png"
+                            alt="Avatar"
+                        />
+                        <div class="horizontalLine"></div>
+                        <h2>João Pedro Spinassé</h2>
+                        <div class="contactForms">
+                            <div id="contactGrid">
+                                <a
+                                    href="https://www.linkedin.com/in/joão-pedro-spinassé-viana-a62543239/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/linkedin-icon.svg"
+                                    />Linkedin</a
+                                >
+                                <a
+                                    href="https://github.com/JP-76"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/github-icon.svg"
+                                    />Github</a
+                                >
+                                <a
+                                    href="mailto:jpspinasse@gmail.com"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/email-icon.svg"
+                                    />E-mail</a
+                                >
+                            </div>
+                            <p>jpspinasse@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contactContainer">
+                        <img src="assets/img/marllon-avatar.png" alt="Avatar" />
+                        <div class="horizontalLine"></div>
+                        <h2>Marllon Ribeiro</h2>
+                        <div class="contactForms">
+                            <div id="contactGrid">
+                                <a
+                                    href="https://byaku.netlify.app/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/globe-icon.svg"
+                                    />Website</a
+                                >
+                                <a
+                                    href="https://www.linkedin.com/in/marllon-ribeiro-94b506212/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/linkedin-icon.svg"
+                                    />Linkedin</a
+                                >
+                                <a
+                                    href="https://github.com/Toiste"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/github-icon.svg"
+                                    />Github</a
+                                >
+                                <a
+                                    href="mailto:marllon.ribeiro027@gmail.com"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/email-icon.svg"
+                                    />E-mail</a
+                                >
+                            </div>
+                            <p>marllon.ribeiro027@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contactContainer">
+                        <img src="assets/img/suhett-avatar.png" alt="Avatar" />
+                        <div class="horizontalLine"></div>
+                        <h2>Filipe Suhett</h2>
+                        <div class="contactForms">
+                            <div id="contactGrid">
+                                <a
+                                    href="https://www.linkedin.com/in/filipe-suhett-a607a3254/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/linkedin-icon.svg"
+                                    />Linkedin</a
+                                >
+                                <a
+                                    href="https://github.com/filipesuhett"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/github-icon.svg"
+                                    />Github</a
+                                >
+                                <a
+                                    href="mailto:filipe.gmx@gmail.com"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/img/svg/email-icon.svg"
+                                    />E-mail</a
+                                >
+                            </div>
+                            <p>filipe.gmx@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
