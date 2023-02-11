@@ -1,0 +1,19 @@
+{
+	"files": [
+		{
+			"path": "assets/css/style.css",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 7,
+					"label": "Code Start"
+				},
+				{
+					"line": 60,
+					"column": 0,
+					"label": "Header"
+				}
+			]
+		}
+	]
+}
