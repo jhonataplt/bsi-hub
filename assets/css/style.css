@@ -116,7 +116,6 @@ a{
     rotate: -90deg;
     filter: var(--secondary-color-svg-filter);
     cursor: pointer;
-    transition: 100ms all ease-in-out;
 }
 
 .filterIcon:hover{

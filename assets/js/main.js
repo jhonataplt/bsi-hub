@@ -10,7 +10,6 @@ function globalFunction() {
 
     const headerBsiLogo = document.querySelector('.bsiHubLogo');
     const welcomeScreenLogo = document.querySelector('.welcomeScreenLogo');
-    const headerAccountArea = document.querySelector('.headerAccountArea');
 
     const openLoginButton = document.querySelector('#openLoginButton');
     const closeLoginButton = document.querySelector('#closeLoginButton');
@@ -167,7 +166,6 @@ function globalFunction() {
             root.style.setProperty('--text-color-svg-filter', 'brightness(0) saturate(100%) invert(23%) sepia(28%) saturate(402%) hue-rotate(183deg) brightness(90%) contrast(93%)');
             root.style.setProperty('--text-color-2-svg-filter', 'brightness(0) saturate(100%) invert(27%) sepia(20%) saturate(868%) hue-rotate(177deg) brightness(91%) contrast(90%)');
             root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(777%) hue-rotate(186deg) brightness(93%) contrast(84%)');
-            headerAccountArea.style.setProperty('border', 'none');
             themeButton.style = "transform: translateX(30px);";
             themeButton.style = "-webkit-transform: translateX(30px);";
             themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-sun-icon.svg');
@@ -192,7 +190,6 @@ function globalFunction() {
             root.style.setProperty('--text-color-svg-filter', 'brightness(0) saturate(100%) invert(76%) sepia(31%) saturate(163%) hue-rotate(195deg) brightness(88%) contrast(76%)');
             root.style.setProperty('--text-color-2-svg-filter', 'brightness(0) saturate(100%) invert(25%) sepia(10%) saturate(1811%) hue-rotate(178deg) brightness(98%) contrast(89%)');
             root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(619%) hue-rotate(179deg) brightness(108%) contrast(87%)');
-            headerAccountArea.style.setProperty('border', '2px solid var(--secondary-color)');
             themeButton.style = "transform: translateX(0px);";
             themeButton.style = "-webkit-transform: translateX(0px);";
             themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-moon-icon.svg');
