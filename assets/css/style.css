@@ -2,6 +2,7 @@
     --bg-color: #1a1f25;
     --primary-color: #21262D;
     --secondary-color: #2b323a;
+    --tertiary-color: #2f373f;
     --text-color: #A5A8BD;
     --text-color-2: #434F65;
     --button-color: #39A6FF;
@@ -59,6 +60,7 @@ a{
 .headerContainer{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 8px 30px;
     height: 60px;
     position: static;
@@ -69,7 +71,7 @@ a{
 }
 
 .bsiHubLogo{
-    height: 45px;
+    height: 40px;
 }
 
 .headerSearchArea{
@@ -126,7 +128,52 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
+}
+
+
+
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+/* #================================================================================================================= */
+
+
+
+#themeArea{
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#themeSwitch{
+    display: flex;
+    align-items: center;
+    background-color: var(--button-color);
+    height: 25px;
+    width: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#themeButton{
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    width: 30px;
+    padding: 0;
+    margin-top: 1px;
+    height: 30px;
+    border-radius: 5px;
+    transition: linear 0.2s;
+}
+
+#themeButton img{
+    width: 100%;
+    height: 100%;
+    filter: var(--text-color-svg-filter);
+    transition: linear 0.3s;
 }
 
 
@@ -373,21 +420,41 @@ main{
 }
 
 .sideMenuArea ul li{
+    position: relative;
     display: flex;
     align-items: center;
     list-style: none;
     width: 100%;
-    padding: 8px 0px 8px 15px;
-    border-radius: 0 20px 20px 0;
+    padding: 10px 0px 10px 15px;
+    border-radius: 0 10px 10px 0;
 }
 
 .sideMenuArea ul li:hover{
     background-color: var(--primary-color);
-    cursor: pointer;
+}
+
+.sideMenuArea ul li:hover::after{
+    background-color: var(--secondary-color);
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
 }
 
 body main .sideMenuArea ul .selectedLink{
     background-color: var(--secondary-color);
+}
+
+body main .sideMenuArea ul .selectedLink::after{
+    background-color: var(--button-color);
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
 }
 
 .sideMenuIcon{
@@ -492,19 +559,36 @@ body main .sideMenuArea ul .selectedLink{
     height: 100%;
 }
 
-.scheduleScreen table{
+#scheduleTable{
     color: var(--text-color);
     width: 1000px;
     vertical-align: center;
-    text-align: center;
+    text-align: center;;
     border-collapse: collapse;
-    border: 4px solid var(--secondary-color);
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
+    border-radius: 20px;
 }
 
-.scheduleScreen th, td{
-    border-collapse: collapse;
-    border: 2px solid var(--secondary-color);
+.scheduleScreen th{
+    border-right: 2px solid var(--secondary-color);
+    border-left: 2px solid var(--secondary-color);
+}
+
+.scheduleScreen th:nth-child(1){
+    border-left: none;
+}
+
+.scheduleScreen th:nth-child(6){
+    border-right: none;
+}
+
+.scheduleScreen td{
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.scheduleScreen tr:nth-child(even) td{
+    background-color: var(--tertiary-color);
 }
 
 .scheduleScreen tr, td{
@@ -513,6 +597,12 @@ body main .sideMenuArea ul .selectedLink{
     max-width: 100px;
     font-size: 18px;
     overflow: hidden;
+}
+
+.scheduleScreen tr:nth-child(even){
+    background-color: var(--secondary-color);
+    border: 2px solid var(red);
+    border-left: 2px solid var(--primary-color);;
 }
 
 .scheduleScreen table tr:nth-child(1){
@@ -550,13 +640,15 @@ body main .sideMenuArea ul .selectedLink{
 
 #lockTableButton{
     display: flex;
-    margin-top: 20px;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--button-color);
-    border-radius: 15px;
-    background-color: transparent;
+    border: none;
+    width: 1000px;
+    border-radius: 0 0 20px 20px;
+    background-color: var(--bg-color);
     padding: 5px;
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
 #lockTableButton img{
@@ -994,46 +1086,3 @@ body main .sideMenuArea ul .selectedLink{
 }
 
 
-
-/* #================================================================================================================= */
-/* #================================================================================================================= */
-/* #================================================================================================================= */
-/* #================================================================================================================= */
-/* #================================================================================================================= */
-
-
-
-#themeArea{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#themeSwitch{
-    display: flex;
-    align-items: center;
-    background-color: var(--button-color);
-    height: 30px;
-    width: 60px;
-    border-radius: 15px;
-    border: 1px solid var(--button-color);
-    cursor: pointer;
-    margin: 20px auto 0 auto;
-}
-
-#themeButton{
-    border: none;
-    background-color: var(--primary-color);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition: linear 0.2s;
-}
-
-#themeButton img{
-    width: 100%;
-    height: 100%;
-    filter: var(--text-color-svg-filter);
-    transition: linear 0.3s;
-}
