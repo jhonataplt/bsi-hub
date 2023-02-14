@@ -1,5 +1,5 @@
 function globalFunction() {
-
+    
     //#======================================================================================#//
     //#================================|| GLOBAL VARIABLES ||================================#//
     //#======================================================================================#//
@@ -153,6 +153,7 @@ function globalFunction() {
             root.style.setProperty('--bg-color', '#D8E0E9');
             root.style.setProperty('--primary-color', '#e6ebf0');
             root.style.setProperty('--secondary-color', '#ffffff');
+            root.style.setProperty('--tertiary-color', '#f5f5fc');
             root.style.setProperty('--text-color', '#242424');
             root.style.setProperty('--text-color-2', '#373E4E');
             root.style.setProperty('--button-color', '#3d8cdb');
@@ -177,6 +178,7 @@ function globalFunction() {
             root.style.setProperty('--bg-color', '#1a1f25');
             root.style.setProperty('--primary-color', '#21262D');
             root.style.setProperty('--secondary-color', '#2b323a');
+            root.style.setProperty('--tertiary-color', '#2f373f');
             root.style.setProperty('--text-color', '#A5A8BD');
             root.style.setProperty('--text-color-2', '#394962');
             root.style.setProperty('--button-color', '#39A6FF');
