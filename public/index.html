@@ -249,18 +249,63 @@
             ============================================================================================================================
         -->
 
-        
 
-            <div class="gradeScreen hidden">
-                <div class="gradeContainer">
-                    <div class="addSubjectArea">
-                        <button id="addSubjectButton">
-                            <img src="assets/img/svg/plus-icon.svg" alt="Plus Icon">
-                            <p>Adicionar Disciplina</p>
-                        </button>
+
+        <div class="gradeScreen hidden">
+
+
+            <div class="gradeContainer">
+                <div class="subjectArea">
+                    <div class="subject">
+                        <p class="subjectName">Disciplina 1</p>
+                        <div class="subjectSubarea">
+                            <div class="gradeArea">
+                                <div class="grade"><p>Prova 1</p><progress max="100" value="80"></progress><p>80%</p></div>
+                                <div class="grade"><p>Prova 2</p><progress max="100" value="20"></progress><p>20%</p></div>
+                                <div class="grade"><p>Total</p><progress max="100" value="50"></progress><p>50%</p></div>
+                                <div class="addGradeArea">
+                                    <button id="addGradeButton">
+                                    <img src="assets/img/svg/plus-icon.svg" alt="Plus Icon">
+                                    <p>Adicionar Nota</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="attendanceArea">
+                                <p class="attendanceTitle">Presença</p>
+                                <div class="attendanceBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: 75"></div>
+                                <p>Você tem <strong>0</strong> faltas disponíveis</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="addSubjectArea">
+                <button id="addSubjectButton">
+                    <img src="assets/img/svg/plus-icon.svg" alt="Plus Icon">
+                    <p>Adicionar Disciplina</p>
+                </button>
+            </div>
+
+
+            <div class="gradeContainer">
+                <div class="semesterArea">
+                    <div class="semesterAverage">
+                        <p class="attendanceTitle">Média Semestral</p>
+                        <div class="attendanceBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: 50"></div>
+                    </div>
+                    <div class="semesterAttendance">
+                        <p class="attendanceTitle">Presença Semestral</p>
+                        <div class="attendanceBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: 75"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notFound hidden">
+                <img src="assets/img/svg/NotFound.svg" alt="Not Found">
+            </div>
+        </div>
 
         <!---
             ============================================================================================================================ 
