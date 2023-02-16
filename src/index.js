@@ -174,9 +174,9 @@ function globalFunction() {
             root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(44%) sepia(96%) saturate(777%) hue-rotate(186deg) brightness(93%) contrast(84%)');
             themeButton.style = "transform: translateX(30px);";
             themeButton.style = "-webkit-transform: translateX(30px);";
-            themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-sun-icon.svg');
-            headerBsiLogo.setAttribute('src', 'assets/img/bsi-hub-logo-2.png');
-            welcomeScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo-2.png');
+            themeButtonIcon.setAttribute('src', '../src/assets/img/svg/outlined-sun-icon.svg');
+            headerBsiLogo.setAttribute('src', '../src/assets/img/bsi-hub-logo-2.png');
+            welcomeScreenLogo.setAttribute('src', '../src/assets/img/bsi-hub-logo-2.png');
         } else if (themeButton.classList.contains('lightTheme')) {
             themeButton.classList.remove('lightTheme');
             themeButton.classList.add('darkTheme');
@@ -196,12 +196,12 @@ function globalFunction() {
             root.style.setProperty('--secondary-color-svg-filter', 'brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(4425%) hue-rotate(172deg) brightness(97%) contrast(78%)');
             root.style.setProperty('--text-color-svg-filter', 'brightness(0) saturate(100%) invert(76%) sepia(31%) saturate(163%) hue-rotate(195deg) brightness(88%) contrast(76%)');
             root.style.setProperty('--text-color-2-svg-filter', 'brightness(0) saturate(100%) invert(25%) sepia(10%) saturate(1811%) hue-rotate(178deg) brightness(98%) contrast(89%)');
-            root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(619%) hue-rotate(179deg) brightness(108%) contrast(87%)');
+            root.style.setProperty('--button-color-svg-filter', 'brightness(0) saturate(100%) invert(58%) sepia(91%) saturate(3020%) hue-rotate(188deg) brightness(106%) contrast(103%)');
             themeButton.style = "transform: translateX(0px);";
             themeButton.style = "-webkit-transform: translateX(0px);";
-            themeButtonIcon.setAttribute('src', 'assets/img/svg/outlined-moon-icon.svg');
-            headerBsiLogo.setAttribute('src', 'assets/img/bsi-hub-logo.png');
-            welcomeScreenLogo.setAttribute('src', 'assets/img/bsi-hub-logo.png');
+            themeButtonIcon.setAttribute('src', '../src/assets/img/svg/outlined-moon-icon.svg');
+            headerBsiLogo.setAttribute('src', '../src/assets/img/bsi-hub-logo.png');
+            welcomeScreenLogo.setAttribute('src', '../src/assets/img/bsi-hub-logo.png');
         }
     })
 
@@ -229,7 +229,7 @@ function globalFunction() {
             scheduleTable.classList.add('locked');
             scheduleTableCells.forEach(element => {
                 if (!element.classList.contains('timeCell')) {
-                    element.style.setProperty('border', '2px solid var(--secondary-color)');
+                    element.style.setProperty('border', '2px solid var(--primary-color)');
                     const previousText = element.firstChild.value;
                     element.innerHTML = `<p>${previousText}</p>`;
                 }
@@ -240,11 +240,11 @@ function globalFunction() {
     lockTableButton.addEventListener('click', function () {
         if (scheduleTable.classList.contains('locked')) {
             switchTableLock(scheduleTable.getAttribute('class'));
-            lockTableButtonImage.setAttribute('src', 'assets/img/svg/unlock-icon.svg');
+            lockTableButtonImage.setAttribute('src', '../src/assets/img/svg/unlock-icon.svg');
         }
         else if (scheduleTable.classList.contains('unlocked')) {
             switchTableLock(scheduleTable.getAttribute('class'));
-            lockTableButtonImage.setAttribute('src', 'assets/img/svg/lock-icon.svg');
+            lockTableButtonImage.setAttribute('src', '../src/assets/img/svg/lock-icon.svg');
         }
     });
 
