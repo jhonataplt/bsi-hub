@@ -165,12 +165,14 @@ a{
     height: 30px;
     border-radius: 5px;
     transition: linear 0.2s;
+    cursor: pointer;
 }
 
 #themeButton img{
     width: 100%;
     height: 100%;
     filter: var(--text-color-svg-filter);
+    cursor: pointer;
     transition: linear 0.3s;
 }
 
@@ -191,7 +193,7 @@ a{
     background-color: transparent;
     padding: 0px 20px;
     border: 2px solid var(--button-color);
-    height: 60px;
+    height: 58px;
     border-radius: 20px;
     color: var(--button-color);
     font-size: 22px;
@@ -487,7 +489,7 @@ body main .sideMenuArea ul .selectedLink::after{
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
+    margin-bottom: 50px;
     padding: 30px;
     transition: 300ms all ease-in-out;
 }
@@ -554,6 +556,7 @@ body main .sideMenuArea ul .selectedLink::after{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
@@ -785,7 +788,7 @@ body main .sideMenuArea ul .selectedLink::after{
     filter: var(--text-color-svg-filter);
 }
 
-.semesterSelection {
+.librarySemesterSelection {
     display: grid;
     grid-template-rows: repeat(4, 2fr);
     grid-template-columns:  1fr 1fr;
@@ -793,7 +796,8 @@ body main .sideMenuArea ul .selectedLink::after{
     gap: 8px;
 }
 
-.semesterSelection button {
+
+.librarySemesterSelection button {
     background-color: transparent;
     padding: 10px 10px;
     border: 1px solid var(--button-color);
@@ -804,13 +808,13 @@ body main .sideMenuArea ul .selectedLink::after{
     transition: 300ms;
 }
 
-.semesterSelection button:hover {
+.librarySemesterSelection button:hover {
     background-color: var(--button-color);
     color: var(--bg-color);
     filter: drop-shadow(0px 0px 3px var(--button-color));
 }
 
-#clearLibraryFiltersButton{
+#clearLibraryFiltersButton, #gradesAllSemestersButton{
     display: flex;;
     justify-content: center;
     align-items: center;
@@ -826,7 +830,7 @@ body main .sideMenuArea ul .selectedLink::after{
     height: 43px;
 }
 
-#clearLibraryFiltersButton:hover{
+#clearLibraryFiltersButton:hover, #gradesAllSemestersButton:hover{
     background-color: transparent;
     filter: drop-shadow(0px 0px 3px var(--text-color));
     border: 2px solid var(--text-color);
@@ -850,26 +854,61 @@ body main .sideMenuArea ul .selectedLink::after{
 
 .gradeScreen{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
-    overflow-y: auto;
-    padding-bottom: 50px;
+    overflow: auto;
 }
 
-.gradeContainer{
+.gradesContainer{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 300px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 2px solid var(--secondary-color);
+    margin: 40px 60px 0 30px;
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+}
+
+.gradesSemesterSelection{
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns:  1fr;
+    width: 80%;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.gradesSemesterSelection button {
+    background-color: transparent;
+    padding: 10px 10px;
+    border: 1px solid var(--button-color);
+    border-radius: 15px;
+    color: var(--button-color);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.gradesSemesterSelection button:hover {
+    background-color: var(--button-color);
+    color: var(--bg-color);
+    filter: drop-shadow(0px 0px 3px var(--button-color));
+}
+
+.gradesContent{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 250px;
     min-height: 30px;
-    border-radius: 20px;
-    border: 2px solid var(--secondary-color);
-    box-shadow: 0px 0px 20px 5px var(--shadow-color);
-    background-color: var(--primary-color);
     padding: 30px 15px;
-    margin: 10px;
+    margin: 10px 10px 10px 390px;
 }
 
 .subjectArea {
@@ -887,7 +926,13 @@ body main .sideMenuArea ul .selectedLink::after{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 325px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 20px;
 }
 
 .subjectName{
@@ -910,6 +955,26 @@ body main .sideMenuArea ul .selectedLink::after{
     padding: 10px 20px;
 }
 
+.semesterArea{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.semesterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0px 0px 20px 5px var(--shadow-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
 .gradeArea {
     width: 50%;
     height: 100%;
@@ -923,18 +988,22 @@ body main .sideMenuArea ul .selectedLink::after{
 
 .grade {
     display: flex;
-    justify-content: start;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 50px;
     width: 100%;
     height: 60px;
-    padding-left: 10%;
 }
 
 .grade p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--text-color);
     font-size: 20px;
-    width: 100px;
-    padding: 0 20px;
+    width: 120px;
+    height: 50px;
+    text-align: center;
 }
 
 .grade progress {
@@ -1021,14 +1090,6 @@ body main .sideMenuArea ul .selectedLink::after{
     width: 100%;
     height: 60px;
     padding: 10px 0;
-}
-
-.semesterArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1000px;
-    height: 230px;
 }
 
 .semesterAverage {
