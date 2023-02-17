@@ -253,7 +253,7 @@
 
     
         <div class="gradeScreen hidden">
-            <div class="gradesContainer">
+            <div class="gradesContainer hidden">
                 <button id="gradesAllSemestersButton">Todos Períodos</button>
                 <div class="gradesSemesterSelection">
                     <button>1º Período</button>
@@ -266,7 +266,7 @@
                     <button>8º Período</button>
                 </div>
             </div>
-            <div class="gradesContent">
+            <div class="gradesContent hidden">
                 <div class="semesterArea">
                     <div class="semesterContainer">
                         <div class="semesterAverage">
@@ -279,8 +279,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="notFound hidden">
-                    <img src="../src/assets/img/svg/NotFound.svg" alt="Not Found">
+            </div>
+            <div class="notFound hidden">
+                <h2>Está perdido? Você ainda não tem notas registradas.</h2>
+                <img src="../src/assets/img/svg/not-found.svg" alt="Not Found">
+                <div class="addGradeArea">
+                    <button id="addGradeButton">
+                        <img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon">
+                        <p>Adicionar Nota</p>
+                    </button>
                 </div>
             </div>
         </div>

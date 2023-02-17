@@ -1,8 +1,13 @@
 const userData = require('./fakeData.json')
 const gradeData = userData.grades;
+const gradesContainer = document.querySelector('.gradesContainer');
 const gradesContent = document.querySelector('.gradesContent');
 
 const gradeScreen = document.querySelector('.gradeScreen');
+
+const semesterArea = document.querySelector('.semesterArea');
+
+const notFound = document.querySelector('.notFound');
 
 function createSubjectArea(){
     const subjectArea = document.createElement('div');
@@ -17,10 +22,10 @@ function createSubject(semester){
     return subject;
 }
 
-function createSubjectName(subjectName){
+function createSubjectName(subjectName, semester){
     const subjectNameElement = document.createElement('p');
     subjectNameElement.classList.add('subjectName');
-    subjectNameElement.innerText = subjectName;
+    subjectNameElement.innerText = `${subjectName} - ${semester}º Semestre`;
     return subjectNameElement;
 }
 
@@ -88,35 +93,44 @@ function createAttendanceText(absences, workload){
 }
 
 function getUserGrades(){
-    const subjectArea = createSubjectArea();
-    gradesContent.appendChild(subjectArea);
-    for(let grade of gradeData){
-        const subject = createSubject(grade.semester);
-        subjectArea.appendChild(subject);
-        const subjectName = createSubjectName(grade.subject);        
-        subject.appendChild(subjectName);
-        const subjectSubarea = createSubjectSubarea();
-        subject.appendChild(subjectSubarea);
-        const gradeArea = createGradeArea();
-        subjectSubarea.appendChild(gradeArea);
-        for(let assesment of grade.assesments){
-            const gradeElement = createGrade(assesment.name, assesment.grade, assesment.value);
-            gradeArea.appendChild(gradeElement);
+    console.log(gradeData)
+    if(gradeData.length > 0){
+        semesterArea.style.display = "flex";
+        gradesContent.style.display = "flex";
+        gradesContainer.style.display = "flex";
+        const subjectArea = createSubjectArea();
+        gradesContent.appendChild(subjectArea);
+        for(let grade of gradeData){
+            const subject = createSubject(grade.semester);
+            subjectArea.appendChild(subject);
+            const subjectName = createSubjectName(grade.subject, grade.semester);        
+            subject.appendChild(subjectName);
+            const subjectSubarea = createSubjectSubarea();
+            subject.appendChild(subjectSubarea);
+            const gradeArea = createGradeArea();
+            subjectSubarea.appendChild(gradeArea);
+            for(let assesment of grade.assesments){
+                const gradeElement = createGrade(assesment.name, assesment.grade, assesment.value);
+                gradeArea.appendChild(gradeElement);
+            }
+            const addGradeArea = createAddGradeArea();
+            gradeArea.appendChild(addGradeArea);
+            const addGradeButton = createAddGradeButton();
+            addGradeArea.appendChild(addGradeButton);
+            const attendanceArea = createAttendaceArea();
+            subjectSubarea.appendChild(attendanceArea);
+            const attendanceTitle = createAttendanceTitle();
+            attendanceArea.appendChild(attendanceTitle);
+            const attendanceBar = createAttendaceBar(grade.workload, grade.absences);
+            attendanceArea.appendChild(attendanceBar);
+            const attendanceText = createAttendanceText(grade.absences, grade.workload);
+            attendanceArea.appendChild(attendanceText);
         }
-        const addGradeArea = createAddGradeArea();
-        gradeArea.appendChild(addGradeArea);
-        const addGradeButton = createAddGradeButton();
-        addGradeArea.appendChild(addGradeButton);
-        const attendanceArea = createAttendaceArea();
-        subjectSubarea.appendChild(attendanceArea);
-        const attendanceTitle = createAttendanceTitle();
-        attendanceArea.appendChild(attendanceTitle);
-        const attendanceBar = createAttendaceBar(grade.workload, grade.absences);
-        attendanceArea.appendChild(attendanceBar);
-        const attendanceText = createAttendanceText(grade.absences, grade.workload);
-        attendanceArea.appendChild(attendanceText);
+        gradeScreen.appendChild(gradesContent);
+    } else{
+        notFound.style.display = "flex";
+        console.log("Não há notas cadastradas")
     }
-    gradeScreen.appendChild(gradesContent);
 }
 
 module.exports = {getUserGrades}
