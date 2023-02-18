@@ -287,5 +287,37 @@
                 }
             ]
         }
+    ],
+    "reminders": [
+        {
+            "title": "Prova de Probabilidade e Estatística",
+            "description": "Média, mediana e moda",
+            "date": "27-04-2023"
+        },
+        {
+            "title": "Prova de Algebra Linear",
+            "description": "Matrizes e determinantes",
+            "date": "16-03-2023"
+        },
+        {
+            "title": "Prova de Estrutura de Dados",
+            "description": "Abstrações de dados",
+            "date": "08-03-2023"
+        },
+        {
+            "title": "Prova de Arquitetura e Organização de Computadores",
+            "description": "Arquitetura de Von Neumann",
+            "date": "27-06-2023"
+        },
+        {
+            "title": "Prova de Teoria Geral de Sistemas",
+            "description": "Sistemas abertos e fechados",
+            "date": "17-08-2023"
+        },
+        {
+            "title": "Prova de Metodologia de Pesquisa",
+            "description": "Pesquisa bibliográfica",
+            "date": "03-04-2023"
+        }
     ]
 }

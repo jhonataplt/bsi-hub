@@ -6,8 +6,9 @@ const gradesContent = document.querySelector('.gradesContent');
 const gradeScreen = document.querySelector('.gradeScreen');
 
 const semesterArea = document.querySelector('.semesterArea');
+const semesterMean = document.querySelector('#semesterMean');
 
-const notFound = document.querySelector('.notFound');
+const notFound = document.querySelector('.gradesNotFound');
 
 function createSubjectArea(){
     const subjectArea = document.createElement('div');
@@ -92,44 +93,63 @@ function createAttendanceText(absences, workload){
     return attendanceText;
 }
 
+function getSubjectGrade(assesment){
+    let totalGrade = 0;
+    for(let test of assesment){
+        totalGrade += test.grade;
+    }
+    return totalGrade;
+}
+
 function getUserGrades(){
-    console.log(gradeData)
+
     if(gradeData.length > 0){
+
         semesterArea.style.display = "flex";
         gradesContent.style.display = "flex";
         gradesContainer.style.display = "flex";
+
         const subjectArea = createSubjectArea();
         gradesContent.appendChild(subjectArea);
+
         for(let grade of gradeData){
+
             const subject = createSubject(grade.semester);
-            subjectArea.appendChild(subject);
             const subjectName = createSubjectName(grade.subject, grade.semester);        
-            subject.appendChild(subjectName);
             const subjectSubarea = createSubjectSubarea();
-            subject.appendChild(subjectSubarea);
             const gradeArea = createGradeArea();
+
+            subjectArea.appendChild(subject);
+            subject.appendChild(subjectName);
+            subject.appendChild(subjectSubarea);
             subjectSubarea.appendChild(gradeArea);
+
             for(let assesment of grade.assesments){
                 const gradeElement = createGrade(assesment.name, assesment.grade, assesment.value);
                 gradeArea.appendChild(gradeElement);
             }
+            
             const addGradeArea = createAddGradeArea();
-            gradeArea.appendChild(addGradeArea);
             const addGradeButton = createAddGradeButton();
-            addGradeArea.appendChild(addGradeButton);
             const attendanceArea = createAttendaceArea();
-            subjectSubarea.appendChild(attendanceArea);
             const attendanceTitle = createAttendanceTitle();
-            attendanceArea.appendChild(attendanceTitle);
             const attendanceBar = createAttendaceBar(grade.workload, grade.absences);
-            attendanceArea.appendChild(attendanceBar);
             const attendanceText = createAttendanceText(grade.absences, grade.workload);
+
+            gradeArea.appendChild(addGradeArea);
+            addGradeArea.appendChild(addGradeButton);
+            subjectSubarea.appendChild(attendanceArea);
+            attendanceArea.appendChild(attendanceTitle);
+            attendanceArea.appendChild(attendanceBar);
             attendanceArea.appendChild(attendanceText);
         }
+
         gradeScreen.appendChild(gradesContent);
+
     } else{
+
         notFound.style.display = "flex";
-        console.log("Não há notas cadastradas")
+
     }
 }
 

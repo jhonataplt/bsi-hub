@@ -280,7 +280,7 @@
                     </div>
                 </div>
             </div>
-            <div class="notFound hidden">
+            <div class="gradesNotFound hidden">
                 <h2>Está perdido? Você ainda não tem notas registradas.</h2>
                 <img src="../src/assets/img/svg/not-found.svg" alt="Not Found">
                 <div class="addGradeArea">
@@ -331,11 +331,22 @@
         -->
         
         <div class="remindersScreen hidden">
-            <div class="remindersContainer">
+            <div class="addReminderContainer">
+                <form action="" class="addReminderContainerForm">
+                    <input type="text" name="reminderTitle" id="addReminderTitle" placeholder="Título">
+                    <textarea name="reminderDescription" id="addReminderDescription" cols="30" rows="10" placeholder="Descrição"></textarea>
+                    <input type="date" name="reminderDate" id="addReminderDate">
+                </form>
+                <button id="addReminderContainerButton"><img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon">Adicionar Lembrete</button>
+            </div>
+            
+            <div class="remindersNotFound hidden">
+                <h2>Está perdido? Você ainda não tem notas registradas.</h2>
+                <img src="../src/assets/img/svg/not-found.svg" alt="Not Found">
                 <div class="addReminderArea">
                     <button id="addReminderButton">
                         <img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon">
-                        <p>Adicionar Lembrete</p>
+                        <p>Adicionar Nota</p>
                     </button>
                 </div>
             </div>

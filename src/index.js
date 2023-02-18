@@ -6,6 +6,7 @@ import './assets/css/style.css';
 const schedule = require('./modules/scheduleModule.js');
 const theme = require('./modules/themeModule.js');
 const grade = require('./modules/gradeModule.js');
+const reminder = require('./modules/remindersModule.js');
 
 
 
@@ -62,7 +63,8 @@ function globalFunction() {
 
 
     schedule.getUserSchedule();
-    grade.getUserGrades()
+    grade.getUserGrades();
+    reminder.getUserReminders();
 
 
 
