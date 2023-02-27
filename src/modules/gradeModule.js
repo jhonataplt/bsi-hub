@@ -1,5 +1,12 @@
+const axios = require('axios');
+
+axios.get('http://localhost:3000/grades')
+    .then(response => {console.log(response.data)});
+
 const userData = require('./fakeData.json')
+
 const gradeData = userData.grades;
+
 const gradesContainer = document.querySelector('.gradesContainer');
 const gradesContent = document.querySelector('.gradesContent');
 
@@ -8,7 +15,9 @@ const gradeScreen = document.querySelector('.gradeScreen');
 const semesterArea = document.querySelector('.semesterArea');
 const semesterMean = document.querySelector('#semesterMean');
 
-const notFound = document.querySelector('.gradesNotFound');
+const performanceEvaluation = document.querySelector('#performanceEvaluation');
+
+const gradesNotFound = document.querySelector('.gradesNotFound');
 
 function createSubjectArea(){
     const subjectArea = document.createElement('div');
@@ -75,15 +84,62 @@ function createAttendanceTitle(){
     return attendanceTitle;
 }
 
-function createAttendaceBar(workload, grade){
-    const maxAbsences = Math.floor(workload * 0.25);
-    const attendanceBar = document.createElement('div');
-    attendanceBar.classList.add('attendanceBar');
-    attendanceBar.setAttribute('role', 'progressbar');
-    attendanceBar.setAttribute('aria-valuemin', '0');
-    attendanceBar.setAttribute('aria-valuemax', maxAbsences);
-    attendanceBar.style.setProperty('--value', grade);
-    return attendanceBar;
+function createCircleChartSvg(svgId = null){
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 36 36');
+    svg.classList.add('circularChart');
+    svg.classList.add('buttonColor');
+
+    if(svgId != null){
+        svg.classList.add(`${svgId}`);
+    }
+
+    return svg;
+}
+
+function createCircleChartBackground(){
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.classList.add('circleBackground');
+    path.setAttribute('d', 'M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831');
+
+    return path;
+}
+
+function createCircleChartFill(percentage){
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.classList.add('circle');
+    path.setAttribute('stroke-dasharray', `${Math.round(percentage)}, 100`);
+    path.setAttribute('d', 'M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831');
+
+    return path;
+}
+
+function createCircleChartText(percentage){
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', '18');
+    text.setAttribute('y', '20.35');
+    text.classList.add('percentage');
+    text.innerHTML = `${percentage.toFixed(0)}%`;
+
+    return text;
+}
+
+function createAttendaceBar(workload, absences){
+
+    const attendancePercentage = (100 / workload) * (workload - absences);
+
+    const circleChart = createCircleChartSvg('attendanceChart');
+
+    const circleChartBackground = createCircleChartBackground();
+    const circleChartFill = createCircleChartFill(attendancePercentage);
+    const circleChartText = createCircleChartText(attendancePercentage);
+
+    circleChart.appendChild(circleChartBackground);
+    circleChart.appendChild(circleChartFill);
+    circleChart.appendChild(circleChartText);
+
+    return circleChart;
 }
 
 function createAttendanceText(absences, workload){
@@ -92,6 +148,7 @@ function createAttendanceText(absences, workload){
     attendanceText.innerHTML = `Você tem <strong>${avaiableAbsences}</strong> faltas disponíveis`;
     return attendanceText;
 }
+
 
 function getSubjectGrade(assesment){
     let totalGrade = 0;
@@ -104,6 +161,12 @@ function getSubjectGrade(assesment){
 function getUserGrades(){
 
     if(gradeData.length > 0){
+
+        const semesterMeanText = semesterMean.querySelector('text');
+        const semesterMeanFill = semesterMean.querySelector('path:nth-child(2)');
+
+        let semesterMeanValue = 0;
+        let subjectGrade = 0;
 
         semesterArea.style.display = "flex";
         gradesContent.style.display = "flex";
@@ -127,7 +190,13 @@ function getUserGrades(){
             for(let assesment of grade.assesments){
                 const gradeElement = createGrade(assesment.name, assesment.grade, assesment.value);
                 gradeArea.appendChild(gradeElement);
+                semesterMeanValue += assesment.grade;
             }
+
+            subjectGrade = getSubjectGrade(grade.assesments);
+            const subjectGradeElement = createGrade('Total', subjectGrade, 100);
+
+            
             
             const addGradeArea = createAddGradeArea();
             const addGradeButton = createAddGradeButton();
@@ -135,20 +204,25 @@ function getUserGrades(){
             const attendanceTitle = createAttendanceTitle();
             const attendanceBar = createAttendaceBar(grade.workload, grade.absences);
             const attendanceText = createAttendanceText(grade.absences, grade.workload);
-
+            
             gradeArea.appendChild(addGradeArea);
             addGradeArea.appendChild(addGradeButton);
             subjectSubarea.appendChild(attendanceArea);
             attendanceArea.appendChild(attendanceTitle);
             attendanceArea.appendChild(attendanceBar);
             attendanceArea.appendChild(attendanceText);
+            attendanceArea.appendChild(subjectGradeElement);
         }
+        
+        semesterMeanValue /= gradeData.length;
+        semesterMeanText.innerHTML = `${semesterMeanValue.toFixed(1)}`;
+        semesterMeanFill.setAttribute('stroke-dasharray', `${Math.round(semesterMeanValue)}, 100`);
 
         gradeScreen.appendChild(gradesContent);
 
     } else{
 
-        notFound.style.display = "flex";
+        gradesNotFound.style.display = "flex";
 
     }
 }

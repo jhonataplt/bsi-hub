@@ -1,18 +1,8 @@
 {
     "username": "jhonataplt",
     "email": "jhontapolito@gmail.com",
-    "password": "123456",
+    "password": "fakePassword",
     "avatar": "https://avatars0.githubusercontent.com/u/1?v=4",
-    "bio": "Developer",
-    "techs": [
-        "Node.js",
-        "ReactJS",
-        "React Native",
-        {
-            "title": "Javascript",
-            "experience": 100
-        }
-    ],
     "schedule": [
         {
             "week_day": 2,
@@ -70,60 +60,47 @@
             "subject": "Estrutura de Dados"
         }
     ],
-    "calendar": [
-        {
-            "ifes_calendar": [
-                {
-                    "day": "06-02-2023",
-                    "type": "college-start-end",
-                    "description": "Início e fim do período letivo"
-                },
-                {
-                    "day": "15-12-2023",
-                    "type": "college-start-end",
-                    "description": "Início e fim do período letivo"
-                }
-            ],
-            "user_calendar": [
-                {
-                    "day": "16-03-2023",
-                    "type": "assessment",
-                    "description": "Prova de Algebra Linear"
-                },
-                {
-                    "day": "08-03-2023",
-                    "type": "assessment",
-                    "description": "Prova de Estrutura de Dados"
-                },
-                {
-                    "day": "27-04-2023",
-                    "type": "assessment",
-                    "description": "Prova de Probabilidade e Estatística"
-                },
-                {
-                    "day": "17-08-2023",
-                    "type": "assessment",
-                    "description": "Prova de Teoria Geral de Sistemas"
-                },
-                {
-                    "day": "27-06-2023",
-                    "type": "assessment",
-                    "description": "Prova de Arquitetura e Organização de Computadores"
-                },
-                {
-                    "day": "03-04-2023",
-                    "type": "assessment",
-                    "description": "Prova de Metodologia de Pesquisa"
-                }
-            ]
-        }
-    ],
+    "calendar": {
+        "user_template_choose" : "bsi_template",
+        "user_calendar": [
+            {
+                "day": "16-03-2023",
+                "type": "assessment",
+                "description": "Prova de Algebra Linear"
+            },
+            {
+                "day": "08-03-2023",
+                "type": "assessment",
+                "description": "Prova de Estrutura de Dados"
+            },
+            {
+                "day": "27-04-2023",
+                "type": "assessment",
+                "description": "Prova de Probabilidade e Estatística"
+            },
+            {
+                "day": "17-08-2023",
+                "type": "assessment",
+                "description": "Prova de Teoria Geral de Sistemas"
+            },
+            {
+                "day": "27-06-2023",
+                "type": "assessment",
+                "description": "Prova de Arquitetura e Organização de Computadores"
+            },
+            {
+                "day": "03-04-2023",
+                "type": "assessment",
+                "description": "Prova de Metodologia de Pesquisa"
+            }
+        ]
+    },
     "grades": [
         {
             "subject": "Probabilidade e Estatística",
             "semester": 3,
             "workload": 60,
-            "absences": 2,
+            "absences": 6,
             "assesments": [
                 {
                     "name": "Prova 1",
@@ -156,7 +133,7 @@
             "subject": "Algebra Linear",
             "semester": 3,
             "workload": 60,
-            "absences": 2,
+            "absences": 4,
             "assesments": [
                 {
                     "name": "Prova 1",
@@ -245,7 +222,7 @@
             "subject": "Teoria Geral de Sistemas",
             "semester": 3,
             "workload": 60,
-            "absences": 2,
+            "absences": 4,
             "assesments": [
                 {
                     "name": "Prova 1",
@@ -268,7 +245,7 @@
             "subject": "Metodologia de Pesquisa",
             "semester": 3,
             "workload": 30,
-            "absences": 2,
+            "absences": 0,
             "assesments": [
                 {
                     "name": "Prova 1",

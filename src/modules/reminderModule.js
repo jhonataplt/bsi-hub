@@ -18,12 +18,12 @@ const remindersScreen = document.querySelector('.remindersScreen');
     </div>
 </div> */
 
-{/* <div class="addReminderArea">
+/* <div class="addReminderArea">
     <button id="addReminderButton">
         <img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon"></img>
         <p>Adicionar Lembrete</p>
     </button>
-</div> */}
+</div> */
 
 function createRemindersArea(){
     const remindersArea = document.createElement('div');

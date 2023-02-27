@@ -265,22 +265,39 @@
                     <button>7º Período</button>
                     <button>8º Período</button>
                 </div>
+                <button id="gradesAddSubjectButton"><img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon"> Adicionar Disciplina</button>
             </div>
             <div class="gradesContent hidden">
                 <div class="semesterArea">
                     <div class="semesterContainer">
                         <div class="semesterAverage">
                             <p class="attendanceTitle">Média Semestral</p>
-                            <div class="attendanceBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: 50" id="semesterMean"></div>
+                            <svg viewBox="0 0 36 36" class="circularChart buttonColor" id="semesterMean">
+                                <path class="circleBackground" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">90%</text>
+                            </svg>
                         </div>
                         <div class="semesterAttendance">
                             <p class="attendanceTitle">Coeficiente de Rendimento</p>
-                            <div class="attendanceBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="--value: 82" id="performanceEvaluation"></div>
+                            <svg viewBox="0 0 36 36" class="circularChart buttonColor" id="performanceEvaluation">
+                                <path class="circleBackground" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
+                                      a 15.9155 15.9155 0 0 1 0 31.831
+                                      a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">90%</text>
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="gradesNotFound hidden">
+            <div class="notFound gradesNotFound hidden">
                 <h2>Está perdido? Você ainda não tem notas registradas.</h2>
                 <img src="../src/assets/img/svg/not-found.svg" alt="Not Found">
                 <div class="addGradeArea">
@@ -340,7 +357,7 @@
                 <button id="addReminderContainerButton"><img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon">Adicionar Lembrete</button>
             </div>
             
-            <div class="remindersNotFound hidden">
+            <div class="notFound remindersNotFound hidden">
                 <h2>Está perdido? Você ainda não tem notas registradas.</h2>
                 <img src="../src/assets/img/svg/not-found.svg" alt="Not Found">
                 <div class="addReminderArea">
@@ -395,6 +412,7 @@
                 <h2>João Pedro Spinassé</h2>
                 <div class="contactForms">
                         <div id="contactGrid">
+                            <a href="https://jp-76.github.io/portfolio/" target="_blank"><img src="../src/assets/img/svg/globe-icon.svg">Website</a>
                             <a href="https://www.linkedin.com/in/joão-pedro-spinassé-viana-a62543239/" target="_blank"><img src="../src/assets/img/svg/linkedin-icon.svg">Linkedin</a>
                             <a href="https://github.com/JP-76" target="_blank"><img src="../src/assets/img/svg/github-icon.svg">Github</a>
                             <a href="mailto:jpspinasse@gmail.com" target="_blank"><img src="../src/assets/img/svg/email-icon.svg">E-mail</a>
@@ -441,7 +459,6 @@
         </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="assets/js/bundle.js"></script>
 </body>
 </html>
