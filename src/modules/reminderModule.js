@@ -135,4 +135,6 @@ function getUserReminders(){
     remindersScreen.appendChild(remindersArea);
 }
 
-module.exports = {getUserReminders};
+reminder.getUserReminders();
+
+// module.exports = {getUserReminders};

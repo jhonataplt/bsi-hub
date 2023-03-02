@@ -1,12 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import './assets/css/style.css';
-
-const schedule = require('./modules/scheduleModule.js');
+// const schedule = require('./modules/scheduleModule.js');
 const theme = require('./modules/themeModule.js');
-const grade = require('./modules/gradeModule.js');
-const reminder = require('./modules/reminderModule.js');
+// const grade = require('./modules/gradeModule.js');
+// const reminder = require('./modules/reminderModule.js');
 
 
 
@@ -31,7 +29,7 @@ function globalFunction() {
 
     const scheduleScreen = document.querySelector('.scheduleScreen');
     const scheduleLink = document.querySelector('#scheduleLink');
-    const lockTableButton = document.querySelector('#lockTableButton');
+    
 
     const calendarScreen = document.querySelector('.calendarScreen');
     const calendarLink = document.querySelector('#calendarLink');
@@ -59,13 +57,6 @@ function globalFunction() {
     //#======================================================================================#//
     //#====================================|| LOAD PAGE ||===================================#//
     //#======================================================================================#//
-
-
-
-    schedule.getUserSchedule();
-    grade.getUserGrades();
-    reminder.getUserReminders();
-
 
 
     //#======================================================================================#//
@@ -107,49 +98,31 @@ function globalFunction() {
         element.classList.add('selectedLink');
     }
 
-
-    function changeScreenTo(screen) {
-        allScreens.forEach(element => {
-            if (!element.classList.contains('hidden')) {
-                element.classList.add('hidden');
-            }
-        });
-        screen.classList.remove('hidden');
-    }
-
-
     sideMenu.addEventListener('click', (e) => {
 
         const clickedElement = e.target;
         const clickedElementParent = clickedElement.parentElement;
 
-        if (clickedElement === scheduleLink || clickedElementParent === scheduleLink) {
+        if (clickedElement === scheduleLink || clickedElementParent === scheduleLink || clickedElement.firstChild === scheduleLink) {
             changeSelectedLink(scheduleLink);
-            changeScreenTo(scheduleScreen);
         }
-        else if (clickedElement === calendarLink || clickedElementParent === calendarLink) {
+        else if (clickedElement === calendarLink || clickedElementParent === calendarLink || clickedElement.firstChild === calendarLink) {
             changeSelectedLink(calendarLink);
-            changeScreenTo(calendarScreen);
         }
-        else if (clickedElement === libraryLink || clickedElementParent === libraryLink) {
+        else if (clickedElement === libraryLink || clickedElementParent === libraryLink || clickedElement.firstChild === libraryLink) {
             changeSelectedLink(libraryLink);
-            changeScreenTo(libraryScreen);
         }
-        else if (clickedElement === gradeLink || clickedElementParent === gradeLink) {
+        else if (clickedElement === gradeLink || clickedElementParent === gradeLink || clickedElement.firstChild === gradeLink) {
             changeSelectedLink(gradeLink);
-            changeScreenTo(gradeScreen);
         }
-        else if (clickedElement === remindersLink || clickedElementParent === remindersLink) {
+        else if (clickedElement === remindersLink || clickedElementParent === remindersLink || clickedElement.firstChild === remindersLink) {
             changeSelectedLink(remindersLink);
-            changeScreenTo(remindersScreen);
         }
-        else if (clickedElement === scholarGridLink || clickedElementParent === scholarGridLink) {
+        else if (clickedElement === scholarGridLink || clickedElementParent === scholarGridLink || clickedElement.firstChild === scholarGridLink) {
             changeSelectedLink(scholarGridLink);
-            changeScreenTo(scholarGridScreen);
         }
-        else if (clickedElement === contactLink || clickedElementParent === contactLink) {
+        else if (clickedElement === contactLink || clickedElementParent === contactLink || clickedElement.firstChild === contactLink) {
             changeSelectedLink(contactLink);
-            changeScreenTo(contactScreen);
         }
     });
 
@@ -173,9 +146,9 @@ function globalFunction() {
 
 
 
-    lockTableButton.addEventListener('click', () => {
-        schedule.switchTableLock();
-    });
+    // lockTableButton.addEventListener('click', () => {
+    //     schedule.switchTableLock();
+    // });
 
 
 

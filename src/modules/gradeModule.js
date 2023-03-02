@@ -67,7 +67,7 @@ function createAddGradeArea(){
 function createAddGradeButton(){
     const addGradeButton = document.createElement('button');
     addGradeButton.id = 'addGradeButton';
-    addGradeButton.innerHTML = `<img src="../src/assets/img/svg/plus-icon.svg" alt="Plus Icon"><p>Adicionar Nota</p>`;
+    addGradeButton.innerHTML = `<img src="src/assets/img/svg/plus-icon.svg" alt="Plus Icon"><p>Adicionar Nota</p>`;
     return addGradeButton;
 }
 
@@ -227,4 +227,6 @@ function getUserGrades(){
     }
 }
 
-module.exports = {getUserGrades}
+grade.getUserGrades();
+
+// module.exports = {getUserGrades}
