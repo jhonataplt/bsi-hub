@@ -11,9 +11,6 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 
-
-
-
 app.get('/', (req, res) => {
     res.render('welcomeView', {
         style: 'style.css'
@@ -28,7 +25,10 @@ app.get('/horario-individual', (req, res) => {
 });
 
 app.get('/calendario', (req, res) => {
-    res.render('calendarView', { style: 'style.css' });
+    res.render('calendarView', {
+        style: 'style.css',
+        viewScript: 'scheduleModule.js'
+    });
 });
 
 app.get('/biblioteca', (req, res) => {

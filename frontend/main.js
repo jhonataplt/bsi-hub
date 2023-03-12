@@ -1,8 +1,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
+import './assets/style.css';
+
 // const schedule = require('./modules/scheduleModule.js');
-const theme = require('./modules/themeModule.js');
+const theme = require('../src/modules/themeModule.js');
 // const grade = require('./modules/gradeModule.js');
 // const reminder = require('./modules/reminderModule.js');
 
@@ -25,31 +27,13 @@ function globalFunction() {
 
     const themeSwitch = document.querySelector('#themeSwitch');
 
-    const welcomeScreen = document.querySelector('.welcomeScreen');
-
-    const scheduleScreen = document.querySelector('.scheduleScreen');
     const scheduleLink = document.querySelector('#scheduleLink');
-    
-
-    const calendarScreen = document.querySelector('.calendarScreen');
     const calendarLink = document.querySelector('#calendarLink');
-
-    const libraryScreen = document.querySelector('.libraryScreen');
     const libraryLink = document.querySelector('#libraryLink');
-
-    const gradeScreen = document.querySelector('.gradeScreen');
     const gradeLink = document.querySelector('#gradeLink');
-
-    const remindersScreen = document.querySelector('.remindersScreen');
     const remindersLink = document.querySelector('#remindersLink');
-
-    const scholarGridScreen = document.querySelector('.scholarGridScreen');
     const scholarGridLink = document.querySelector('#scholarGridLink');
-
-    const contactScreen = document.querySelector('.contactScreen');
     const contactLink = document.querySelector('#contactLink');
-
-    const allScreens = [welcomeScreen, scheduleScreen, calendarScreen, libraryScreen, gradeScreen, remindersScreen, scholarGridScreen, contactScreen];
     const allLinks = [scheduleLink, calendarLink, libraryLink, gradeLink, remindersLink, scholarGridLink, contactLink];
 
 

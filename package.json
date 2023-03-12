@@ -2,9 +2,10 @@
   "name": "bsi-hub",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "bundleUpdater": "webpack -w"
+    "dev": "webpack -w",
+    "start": "nodemon server.js --ignore public --ignore frontend"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,12 @@
   },
   "dependencies": {
     "core-js": "^3.28.0",
+    "core.js": "^0.4.2",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "fs": "^0.0.1-security",
+    "nodemon": "^2.0.21",
     "path": "^0.12.7",
     "regenerator-runtime": "^0.13.11"
   }
