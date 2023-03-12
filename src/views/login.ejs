@@ -1,0 +1,71 @@
+<%- include('includes/head')  %>
+
+
+<div class="h-screen bg-gradient-to-t from-neutral-300 to-white flex items-center flex-col">
+
+    <%- include('includes/navbar')  %>
+
+    <div class="h-3/4 mt-20 w-1/2 bg-white rounded shadow-xl flex">
+      <div class="w-7/12 h-full flex justify-center items-center overflow-hidden">
+        <img src="./frontend/assets/img/login-image.png" alt="Floating Island" class="h-full min-w-fit">
+      </div>
+      <div class="py-6 h-full w-5/12 bg-white shadow-xl flex flex-col justify-evenly items-center">
+        <div class="w-8/12 flex flex-col">
+          <div class="w-full flex justify-center items-center" id="accountFormChanger">
+            <button class="text-md text-gray-800 w-1/2 transition-all duration-7000 ease-in-out hover:bg-gradient-to-t from-neutral-100 to-white" id="loginChooser">
+              Entrar
+            </button>
+            <button class="text-md text-gray-800 w-1/2 transition-all duration-700 ease-in-out hover:bg-gradient-to-t from-neutral-100 to-white" id="registerChooser">
+              Cadastrar
+            </button>
+          </div>
+          <div class="bg-indigo-500 h-0.5 w-1/2 transition-all duration-700 ease-in-out" id="chooserBar">
+          </div>
+        </div>
+
+        <%- include('includes/messages') %>
+
+        <div class="flex overflow-hidden h-5/6" id="formSlider">
+          <form action="/login/login" class="w-full shrink-0 transition-all duration-700 ease-in-out px-8" method="POST">
+            <h1 class="block text-gray-800 font-bold text-5xl my-9">Entre na sua conta</h1>
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="mb-6">
+              <label for="username" class="block text-gray-800 font-bold">Nome de usuário:</label>
+              <input type="text" name="username" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+            </div>
+            <div>
+              <label for="password" class="block text-gray-800 font-bold">Senha:</label>
+              <input type="password" name="password" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+              <a href="/login/forgot" class="text-sm font-thin text-gray-800 hover:underline mt-2 inline-block hover:text-indigo-600">Esqueceu a senha?</a>
+            </div>
+            <button class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">Login</button>
+          </form>
+
+          <form action="/login/register" class="w-full shrink-0 transition-all duration-700 ease-in-out px-8" method="POST">
+            <h1 class="block text-gray-800 font-bold text-5xl my-9">Crie sua conta agora</h1>
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="mb-3">
+              <label for="username" class="block text-gray-800 font-bold">Nome de usuário:</label>
+              <input type="text" name="username" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="block text-gray-800 font-bold">E-mail:</label>
+              <input type="email" name="email" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="block text-gray-800 font-bold">Senha:</label>
+              <input type="password" name="password" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+            </div>
+            <div>
+              <label for="passwordConfirm" class="block text-gray-800 font-bold">Repita a senha:</label>
+              <input type="password" name="passwordConfirm" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+            </div>
+            <button class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">Registrar</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <%- include('includes/bottom')  %>
